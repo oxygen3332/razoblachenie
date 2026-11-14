@@ -9,7 +9,7 @@
   "t": 0,
   "frame": 0,
   "type": "hide",
-  "label": "#s1_p2,#s1_p3,#scene2,#scene3,#s4_p1,#s4_p2,#s4_p3,#s4_p4,#scene5,#scene6_verdict,#scene6_jumpscare"
+  "label": "#s1_p2,#s1_p3,#scene2,#scene3,#s4_p1,#s4_p2,#s4_p3,#s4_p4,#scene5,#scene6_verdict,#scene6_jumpscare,#s3_model_sonnet,#s3_response_sonnet"
  },
  {
   "t": 1.3333,
@@ -279,7 +279,19 @@
   "t": 39.5,
   "frame": 1185,
   "type": "press",
-  "label": "#s3_model_name"
+  "label": "#s3_model_opus"
+ },
+ {
+  "t": 39.6,
+  "frame": 1188,
+  "type": "cut",
+  "label": "flip model to sonnet"
+ },
+ {
+  "t": 39.6,
+  "frame": 1188,
+  "type": "enter",
+  "label": "#s3_response_sonnet"
  },
  {
   "t": 44,

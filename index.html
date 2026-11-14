@@ -333,11 +333,16 @@ html, body {
       <div class="terminal-body">
         <div style="color:var(--ink-soft);margin-bottom:14px;">$ curl -X POST api.cheat-ai.shop \</div>
         <div style="margin-left:24px;margin-bottom:14px;">-H "Authorization: Bearer cheat-key" \</div>
-        <div style="margin-left:24px;margin-bottom:20px;">-d '{"model": "<span id="s3_model_name" style="color:var(--cyan);font-weight:800;">claude-opus-5.5</span>", "prompt": "Кто ты?"}'</div>
+        <div style="margin-left:24px;margin-bottom:20px;">-d '{"model": "<span style="position:relative;display:inline-block;"><span id="s3_model_opus" style="color:var(--cyan);font-weight:800;">claude-opus-5.5</span><span id="s3_model_sonnet" style="position:absolute;left:0;top:0;color:var(--accent);font-weight:800;white-space:nowrap;">claude-sonnet-4.6</span></span>", "prompt": "Кто ты?"}'</div>
         <div style="height:2px;background:rgba(255,255,255,0.1);margin:24px 0;"></div>
         <div style="font-size:22px;color:var(--ink-soft);margin-bottom:10px;">ОТВЕТ ШЛЮЗА:</div>
-        <div id="s3_response_box" style="font-size:38px;font-weight:800;color:var(--cyan);line-height:1.3;">
-          «Я Claude Opus 5.5»
+        <div style="position:relative;height:55px;">
+          <div id="s3_response_opus" style="position:absolute;left:0;top:0;font-size:38px;font-weight:800;color:var(--cyan);line-height:1.3;">
+            «Я Claude Opus 5.5»
+          </div>
+          <div id="s3_response_sonnet" style="position:absolute;left:0;top:0;font-size:38px;font-weight:800;color:var(--accent);line-height:1.3;">
+            «Я Claude Sonnet»
+          </div>
         </div>
       </div>
     </div>
@@ -500,7 +505,7 @@ const RED = '#ef4444';
 /* ========================================================================= */
 // Initial setup
 M.show('#s1_p1', 0);
-M.hide(['#s1_p2', '#s1_p3', '#scene2', '#scene3', '#s4_p1', '#s4_p2', '#s4_p3', '#s4_p4', '#scene5', '#scene6_verdict', '#scene6_jumpscare'], 0);
+M.hide(['#s1_p2', '#s1_p3', '#scene2', '#scene3', '#s4_p1', '#s4_p2', '#s4_p3', '#s4_p4', '#scene5', '#scene6_verdict', '#scene6_jumpscare', '#s3_model_sonnet', '#s3_response_sonnet'], 0);
 
 // Phase 1: Real website hero camera push + 3 ruble promo badge
 M.drift('#s1_web_wrap', { prop: 'scale', from: 1.0, to: 1.06, start: 0, end: 155 });
@@ -564,22 +569,15 @@ M.cursor('#s3_cursor', {
   ],
   ease: 'glide'
 });
-M.press('#s3_cursor', '#s3_model_name', { at: 1185, frames: 3 });
+M.press('#s3_cursor', '#s3_model_opus', { at: 1185, frames: 3 });
 
-// On click, model parameter changes to claude-sonnet-4.6, response flips instantly
-M.kf('#s3_model_name', 'opacity', [[1185, 1], [1186, 0.2], [1190, 1]]);
-M.kf('#s3_response_box', 'scale', [[1192, 1], [1194, 1.15], [1200, 1]]);
-
-// Update text in DOM via Motion renderer
-const modelSpan = document.getElementById('s3_model_name');
-const responseBox = document.getElementById('s3_response_box');
-Motion.last.tl.call(() => {
-  if (modelSpan) modelSpan.textContent = 'claude-sonnet-4.6';
-  if (responseBox) {
-    responseBox.textContent = '«Я Claude Sonnet»';
-    responseBox.style.color = '#ff6a1a';
-  }
-}, null, 1188 / 30);
+// At frame 1188: model flips from Opus to Sonnet, and response flips from Opus to Sonnet!
+M.cut(1188, {
+  hide: ['#s3_model_opus', '#s3_response_opus'],
+  show: ['#s3_model_sonnet', '#s3_response_sonnet'],
+  label: 'flip model to sonnet'
+});
+M.enter('#s3_response_sonnet', { at: 1188, frames: 8, ease: 'popOver', from: { scale: 1.15 } });
 
 // Stamp at frame 1320
 M.enter('#s3_stamp', { at: 1320, frames: 10, ease: 'crashIn', from: { scale: 3.5, rotation: 5 } });
