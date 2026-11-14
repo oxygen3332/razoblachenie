@@ -1,0 +1,868 @@
+{
+ "url": "https://cheat-ai.shop",
+ "finalUrl": "https://cheat-ai.shop/",
+ "capturedAt": "2026-11-14T21:55:15.768Z",
+ "viewport": {
+  "w": 1920,
+  "h": 1080
+ },
+ "docHeight": 3454,
+ "name": "NexoraX",
+ "title": "NexoraX — Claude API, GLM и DeepSeek",
+ "description": "Claude Opus 5.5 API, GLM-5.3 Flash UNCENSORED и DeepSeek V4.1 Flash 1017 UNCENSORED. Раздельные ключи, оплата в Telegram.",
+ "tagline": "Лучшие AI-модели. Только на максималках.",
+ "lang": "ru",
+ "themeColorMeta": "#0a0a0a",
+ "colorSchemeMeta": null,
+ "manifest": null,
+ "copy": {
+  "h1": [
+   "Лучшие AI-модели. Только на максималках."
+  ],
+  "h2": [
+   "Один ключ. Любой клиент.",
+   "Отличные цены за отличное качество.",
+   "Последние новости"
+  ],
+  "h3": [
+   "DeepSeek V4.1 Flash 1017 UNCENSORED: оплата по расходу",
+   "GLM-5.3 Flash UNCENSORED: быстро и без фильтров",
+   "Claude Opus 5.5 — новый флагман в NexoraX",
+   "Как подключить Claude Code к NexoraX"
+  ],
+  "heroLine": "Лучшие AI-модели.",
+  "ctas": [
+   {
+    "text": "Поддержка",
+    "bg": "#1f1f1f",
+    "color": "#ffffff",
+    "border": null,
+    "radius": 999,
+    "filled": true,
+    "inHeader": true,
+    "inHero": true,
+    "top": 13,
+    "w": 110,
+    "h": 38
+   },
+   {
+    "text": "Получить ключ",
+    "bg": "#ffffff",
+    "color": "#000000",
+    "border": null,
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 557,
+    "w": 173,
+    "h": 44
+   },
+   {
+    "text": "Документация",
+    "bg": "#1f1f1f",
+    "color": "#ffffff",
+    "border": null,
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 557,
+    "w": 145,
+    "h": 44
+   },
+   {
+    "text": "Claude Code",
+    "bg": "#1a1a1a",
+    "color": "#ffffff",
+    "border": null,
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": true,
+    "top": 1247,
+    "w": 112,
+    "h": 36
+   },
+   {
+    "text": "Копировать",
+    "bg": null,
+    "color": "#6e6e6e",
+    "border": null,
+    "radius": 8,
+    "filled": false,
+    "inHeader": false,
+    "inHero": true,
+    "top": 844,
+    "w": 108,
+    "h": 28
+   },
+   {
+    "text": "Купить 60M токенов",
+    "bg": "#1f1f1f",
+    "color": "#ffffff",
+    "border": null,
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": false,
+    "top": 2407,
+    "w": 249,
+    "h": 44
+   },
+   {
+    "text": "Купить 100M токенов",
+    "bg": "#ffffff",
+    "color": "#000000",
+    "border": null,
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": false,
+    "top": 2407,
+    "w": 249,
+    "h": 44
+   },
+   {
+    "text": "Купить 300M токенов",
+    "bg": "#1f1f1f",
+    "color": "#ffffff",
+    "border": null,
+    "radius": 999,
+    "filled": true,
+    "inHeader": false,
+    "inHero": false,
+    "top": 2407,
+    "w": 249,
+    "h": 44
+   }
+  ],
+  "nav": [
+   "NexoraX",
+   "Модели",
+   "Разработчикам",
+   "Тарифы",
+   "Новости",
+   "Кабинет"
+  ],
+  "sentences": [
+   "Claude Opus 5.5, GLM-5.3 Flash UNCENSORED и DeepSeek V4.1 Flash 1017 UNCENSORED. Пакеты для Claude, отдельные кредитные ключи для GLM и DeepSeek.",
+   "Anthropic Messages и OpenAI Chat Completions на одном ключе. Claude Code, Cursor, Cline, Aider, Open WebUI — подключение за минуту.",
+   "Claude — пакетами или по подписке. GLM и DeepSeek — по фактическому расходу кредитов."
+  ]
+ },
+ "colors": {
+  "theme": "dark",
+  "monochrome": false,
+  "ground": [
+   {
+    "hex": "#0b0b0b",
+    "share": 0.925,
+    "sources": [
+     "pixels",
+     "dom"
+    ]
+   }
+  ],
+  "ink": {
+   "hex": "#f5f5f5",
+   "contrastOnGround": 18.05,
+   "source": "computed colour of the largest heading (h1 \"Лучшие AI-модели. Только на максималках.\", 84px)"
+  },
+  "inkSoft": {
+   "hex": "#e8e8e8",
+   "contrastOnGround": 16.06,
+   "note": "body copy"
+  },
+  "accentCandidates": {
+   "note": "saturated colours sampled from imagery (a CSS/DOM accent exists, these are extra)",
+   "items": [
+    {
+     "hex": "#4d6bfe",
+     "file": "screens/04.jpg",
+     "share": 0.00768,
+     "sharePct": 0.77
+    },
+    {
+     "hex": "#fe6601",
+     "file": "screens/04.jpg",
+     "share": 0.00764,
+     "sharePct": 0.76
+    },
+    {
+     "hex": "#673425",
+     "file": "screens/04.jpg",
+     "share": 0.0005,
+     "sharePct": 0.05
+    },
+    {
+     "hex": "#462568",
+     "file": "screens/04.jpg",
+     "share": 0.0005,
+     "sharePct": 0.05
+    }
+   ]
+  },
+  "inkMuted": {
+   "hex": "#a3a3a3",
+   "contrastOnGround": 7.8
+  },
+  "accents": [
+   {
+    "hex": "#ff6a1a",
+    "role": "accent (primary)",
+    "score": 60,
+    "sources": [
+     "css var --accent",
+     "background"
+    ]
+   },
+   {
+    "hex": "#1f1f1f",
+    "role": "accent 2",
+    "score": 30,
+    "sources": [
+     "CTA background"
+    ]
+   }
+  ],
+  "ctaBg": "#1f1f1f",
+  "link": "#cfcfcf",
+  "palette": [
+   {
+    "hex": "#0b0b0b",
+    "role": "ground (dark theme)",
+    "share": 0.925
+   },
+   {
+    "hex": "#f5f5f5",
+    "role": "ink (headline / logo ink)",
+    "contrast": 18.1
+   },
+   {
+    "hex": "#e8e8e8",
+    "role": "ink-soft (body copy)",
+    "contrast": 16.1
+   },
+   {
+    "hex": "#a3a3a3",
+    "role": "ink muted",
+    "contrast": 7.8
+   },
+   {
+    "hex": "#ff6a1a",
+    "role": "accent (primary)",
+    "sources": [
+     "css var --accent",
+     "background"
+    ]
+   },
+   {
+    "hex": "#1f1f1f",
+    "role": "accent 2",
+    "sources": [
+     "CTA background"
+    ]
+   }
+  ],
+  "pixelPalette": [
+   {
+    "hex": "#0b0b0b",
+    "share": 0.885
+   },
+   {
+    "hex": "#212021",
+    "share": 0.045
+   },
+   {
+    "hex": "#3a3a3a",
+    "share": 0.018
+   },
+   {
+    "hex": "#525252",
+    "share": 0.012
+   },
+   {
+    "hex": "#6a6a6a",
+    "share": 0.007
+   },
+   {
+    "hex": "#fafafa",
+    "share": 0.006
+   },
+   {
+    "hex": "#9d9d9d",
+    "share": 0.004
+   },
+   {
+    "hex": "#848484",
+    "share": 0.004
+   },
+   {
+    "hex": "#b4b4b4",
+    "share": 0.003
+   },
+   {
+    "hex": "#582202",
+    "share": 0.003
+   }
+  ],
+  "domBackgrounds": [
+   {
+    "hex": "#0a0a0a",
+    "share": 0.851
+   },
+   {
+    "hex": "#141414",
+    "share": 0.055
+   },
+   {
+    "hex": "#121212",
+    "share": 0.034
+   },
+   {
+    "hex": "#0c0c0c",
+    "share": 0.022
+   },
+   {
+    "hex": "#1f1f1f",
+    "share": 0.006
+   },
+   {
+    "hex": "#000000",
+    "share": 0.006
+   },
+   {
+    "hex": "#ffffff",
+    "share": 0.004
+   },
+   {
+    "hex": "#0d1a54",
+    "share": 0.003
+   },
+   {
+    "hex": "#171717",
+    "share": 0.003
+   },
+   {
+    "hex": "#5a2200",
+    "share": 0.003
+   }
+  ],
+  "textColors": [
+   {
+    "hex": "#f5f5f5",
+    "share": 0.325
+   },
+   {
+    "hex": "#e8e8e8",
+    "share": 0.153
+   },
+   {
+    "hex": "#a3a3a3",
+    "share": 0.129
+   },
+   {
+    "hex": "#6e6e6e",
+    "share": 0.095
+   },
+   {
+    "hex": "#cfcfcf",
+    "share": 0.084
+   },
+   {
+    "hex": "#ececec",
+    "share": 0.061
+   },
+   {
+    "hex": "#e5e5e5",
+    "share": 0.05
+   },
+   {
+    "hex": "#ffffff",
+    "share": 0.04
+   }
+  ],
+  "cssVars": [
+   {
+    "name": "--bg",
+    "value": "#0a0a0a",
+    "hex": "#0a0a0a"
+   },
+   {
+    "name": "--bg-2",
+    "value": "#0e0e0e",
+    "hex": "#0e0e0e"
+   },
+   {
+    "name": "--card",
+    "value": "#141414",
+    "hex": "#141414"
+   },
+   {
+    "name": "--card-2",
+    "value": "#181818",
+    "hex": "#181818"
+   },
+   {
+    "name": "--card-3",
+    "value": "#1c1c1c",
+    "hex": "#1c1c1c"
+   },
+   {
+    "name": "--pill",
+    "value": "#1f1f1f",
+    "hex": "#1f1f1f"
+   },
+   {
+    "name": "--pill-hover",
+    "value": "#2a2a2a",
+    "hex": "#2a2a2a"
+   },
+   {
+    "name": "--text",
+    "value": "#f5f5f5",
+    "hex": "#f5f5f5"
+   },
+   {
+    "name": "--text-2",
+    "value": "#a3a3a3",
+    "hex": "#a3a3a3"
+   },
+   {
+    "name": "--text-3",
+    "value": "#6e6e6e",
+    "hex": "#6e6e6e"
+   },
+   {
+    "name": "--accent",
+    "value": "#ff6a1a",
+    "hex": "#ff6a1a"
+   },
+   {
+    "name": "--green",
+    "value": "#3fb950",
+    "hex": "#3fb950"
+   },
+   {
+    "name": "--red",
+    "value": "#f85149",
+    "hex": "#f85149"
+   },
+   {
+    "name": "--blue",
+    "value": "#58a6ff",
+    "hex": "#58a6ff"
+   }
+  ]
+ },
+ "fonts": {
+  "roles": {
+   "heading": {
+    "family": "Geist, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+    "weight": "500",
+    "size": "84px",
+    "style": "normal",
+    "letterSpacing": "-4.368px",
+    "lineHeight": "85.68px",
+    "textTransform": "none",
+    "color": "#f5f5f5",
+    "primaryFamily": "Geist",
+    "file": "fonts/geist-600.woff2",
+    "fileWeight": "600"
+   },
+   "body": {
+    "family": "Geist, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+    "weight": "400",
+    "size": "19px",
+    "style": "normal",
+    "letterSpacing": "-0.228px",
+    "lineHeight": "28.5px",
+    "textTransform": "none",
+    "color": "#ececec",
+    "primaryFamily": "Geist",
+    "file": "fonts/geist-600.woff2",
+    "fileWeight": "600"
+   },
+   "button": {
+    "family": "Geist, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+    "weight": "500",
+    "size": "14px",
+    "style": "normal",
+    "letterSpacing": "-0.14px",
+    "lineHeight": "21px",
+    "textTransform": "none",
+    "color": "#ffffff",
+    "primaryFamily": "Geist",
+    "file": "fonts/geist-600.woff2",
+    "fileWeight": "600"
+   },
+   "nav": {
+    "family": "Geist, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+    "weight": "600",
+    "size": "17px",
+    "style": "normal",
+    "letterSpacing": "-0.51px",
+    "lineHeight": "25.5px",
+    "textTransform": "none",
+    "color": "#f5f5f5",
+    "primaryFamily": "Geist",
+    "file": "fonts/geist-600.woff2",
+    "fileWeight": "600"
+   }
+  },
+  "faces": [
+   {
+    "family": "Geist",
+    "weight": "600",
+    "style": "normal",
+    "url": "https://fonts.gstatic.com/s/geist/v5/gyByhwUxId8gMEwcGFWNOITd.woff2",
+    "file": "fonts/geist-600.woff2",
+    "bytes": 29288,
+    "used": false,
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "400",
+    "style": "normal",
+    "url": "https://fonts.gstatic.com/s/geistmono/v6/or3nQ6H-1_WfwkMZI_qYFrcdmhHkjko.woff2",
+    "file": "fonts/geist-mono-400.woff2",
+    "bytes": 23108,
+    "used": false,
+    "range": "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+   },
+   {
+    "family": null,
+    "weight": "400",
+    "style": "normal",
+    "url": "https://fonts.gstatic.com/l/font?kit=or3NQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KPxYzNiCp1OUedn8zbXmTkiSlcuFog&skey=f2030a904b731103&v=v6",
+    "file": "fonts/font-400.woff2",
+    "bytes": 15828,
+    "used": true
+   },
+   {
+    "family": null,
+    "weight": "400",
+    "style": "normal",
+    "url": "https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBy4zpPN36U&skey=70a816dcd17c8a3c&v=v5",
+    "file": "fonts/font-400-2.woff2",
+    "bytes": 28636,
+    "used": true
+   },
+   {
+    "family": null,
+    "weight": "400",
+    "style": "normal",
+    "url": "https://fonts.gstatic.com/l/font?kit=or3NQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KPxYzNiCp1OUedn8zbXmSkiSlcuFog&skey=f2030a904b731103&v=v6",
+    "file": "fonts/font-400-3.woff2",
+    "bytes": 21072,
+    "used": true
+   },
+   {
+    "family": null,
+    "weight": "400",
+    "style": "normal",
+    "url": "https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBi4zpPN36U&skey=70a816dcd17c8a3c&v=v5",
+    "file": "fonts/font-400-4.woff2",
+    "bytes": 22236,
+    "used": true
+   },
+   {
+    "family": null,
+    "weight": "400",
+    "style": "normal",
+    "url": "https://fonts.gstatic.com/l/font?kit=gyBUhwUxId8gMGYQMKR3pzfaWI_RnONalrErE8iusq2KkpeJNBa4zpPN36U&skey=70a816dcd17c8a3c&v=v5",
+    "file": "fonts/font-400-5.woff2",
+    "bytes": 27688,
+    "used": true
+   }
+  ],
+  "loadedByPage": [
+   {
+    "family": "Geist",
+    "weight": "400",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "400",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "400",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "400",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "400",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "500",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "500",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "500",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "600",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "600",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "600",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "600",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist",
+    "weight": "600",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "400",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "400",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "400",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "400",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "400",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "400",
+    "style": "normal",
+    "status": "loaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   },
+   {
+    "family": "Geist Mono",
+    "weight": "500",
+    "style": "normal",
+    "status": "unloaded"
+   }
+  ],
+  "mostUsed": [
+   {
+    "key": "Geist|400",
+    "weight": 27381
+   },
+   {
+    "key": "Geist|500",
+    "weight": 15648
+   },
+   {
+    "key": "Geist Mono|400",
+    "weight": 2482
+   },
+   {
+    "key": "Geist|600",
+    "weight": 238
+   }
+  ],
+  "platformFonts": {
+   "h1": [
+    {
+     "family": "Geist",
+     "custom": true,
+     "glyphs": 28
+    }
+   ],
+   "body": [
+    {
+     "family": "Geist",
+     "custom": true,
+     "glyphs": 143
+    }
+   ]
+  }
+ },
+ "logo": {
+  "file": "logo/logo.svg",
+  "kind": "svg",
+  "source": "inline svg (logo-attr,home-link,header,top)",
+  "fills": [
+   "#ffffff"
+  ],
+  "onDark": true,
+  "favicon": "logo/favicon.svg",
+  "appIcon": null,
+  "text": {
+   "text": "Тарифы",
+   "font": "Geist, Inter, system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+   "weight": "500",
+   "size": "14px",
+   "color": "#e8e8e8"
+  },
+  "candidates": [
+   {
+    "score": 16,
+    "why": [
+     "logo-attr",
+     "home-link",
+     "header",
+     "top"
+    ],
+    "members": [
+     "svg 26x26"
+    ],
+    "lockup": false
+   },
+   {
+    "score": 12,
+    "why": [
+     "logo-attr",
+     "home-link"
+    ],
+    "members": [
+     "img 22x22 https://cheat-ai.shop/assets/img/models/zai.svg",
+     "img 22x22 https://cheat-ai.shop/assets/img/models/deepseek.svg"
+    ],
+    "lockup": false
+   },
+   {
+    "score": 5,
+    "why": [
+     "logo-attr",
+     "home-link"
+    ],
+    "members": [
+     "svg 26x26"
+    ],
+    "lockup": false
+   },
+   {
+    "score": 4,
+    "why": [
+     "logo-attr"
+    ],
+    "members": [
+     "img 49x49 https://cheat-ai.shop/assets/img/models/deepseek.svg"
+    ],
+    "lockup": false
+   }
+  ]
+ },
+ "ogImage": null,
+ "screens": [
+  {
+   "file": "screens/01.jpg",
+   "scrollY": 0
+  },
+  {
+   "file": "screens/02.jpg",
+   "scrollY": 791
+  },
+  {
+   "file": "screens/03.jpg",
+   "scrollY": 1583
+  },
+  {
+   "file": "screens/04.jpg",
+   "scrollY": 2374
+  }
+ ],
+ "media": [],
+ "mediaDropped": [],
+ "warnings": []
+}

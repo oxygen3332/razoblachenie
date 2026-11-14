@@ -1,0 +1,656 @@
+[
+ {
+  "t": 0,
+  "frame": 0,
+  "type": "show",
+  "label": "#s1_p1"
+ },
+ {
+  "t": 0,
+  "frame": 0,
+  "type": "hide",
+  "label": "#s1_p2,#s1_p3,#scene2,#scene3,#s4_p1,#s4_p2,#s4_p3,#s4_p4,#scene5,#scene6_verdict,#scene6_jumpscare"
+ },
+ {
+  "t": 1.3333,
+  "frame": 40,
+  "type": "enter",
+  "label": "#s1_promo_badge"
+ },
+ {
+  "t": 5.1667,
+  "frame": 155,
+  "type": "cut",
+  "label": "cut to reality check"
+ },
+ {
+  "t": 5.1667,
+  "frame": 155,
+  "type": "enter",
+  "label": "#mda_text"
+ },
+ {
+  "t": 6.1667,
+  "frame": 185,
+  "type": "enter",
+  "label": "Это"
+ },
+ {
+  "t": 6.1667,
+  "frame": 185,
+  "type": "word",
+  "label": "Это"
+ },
+ {
+  "t": 6.3,
+  "frame": 189,
+  "type": "enter",
+  "label": "вы"
+ },
+ {
+  "t": 6.3,
+  "frame": 189,
+  "type": "word",
+  "label": "вы"
+ },
+ {
+  "t": 6.4333,
+  "frame": 193,
+  "type": "enter",
+  "label": "слышите"
+ },
+ {
+  "t": 6.4333,
+  "frame": 193,
+  "type": "word",
+  "label": "слышите"
+ },
+ {
+  "t": 6.5667,
+  "frame": 197,
+  "type": "enter",
+  "label": "каждый"
+ },
+ {
+  "t": 6.5667,
+  "frame": 197,
+  "type": "word",
+  "label": "каждый"
+ },
+ {
+  "t": 6.7667,
+  "frame": 203,
+  "type": "enter",
+  "label": "день..."
+ },
+ {
+  "t": 6.7667,
+  "frame": 203,
+  "type": "word",
+  "label": "день..."
+ },
+ {
+  "t": 8.6667,
+  "frame": 260,
+  "type": "enter",
+  "label": "#mammoth_stamp"
+ },
+ {
+  "t": 11,
+  "frame": 330,
+  "type": "cut",
+  "label": "cut to target cheat-ai"
+ },
+ {
+  "t": 11,
+  "frame": 330,
+  "type": "enter",
+  "label": "СЕГОДНЯ"
+ },
+ {
+  "t": 11,
+  "frame": 330,
+  "type": "word",
+  "label": "СЕГОДНЯ"
+ },
+ {
+  "t": 11.1333,
+  "frame": 334,
+  "type": "enter",
+  "label": "МЫ"
+ },
+ {
+  "t": 11.1333,
+  "frame": 334,
+  "type": "word",
+  "label": "МЫ"
+ },
+ {
+  "t": 11.2667,
+  "frame": 338,
+  "type": "enter",
+  "label": "ВСКРОЕМ"
+ },
+ {
+  "t": 11.2667,
+  "frame": 338,
+  "type": "word",
+  "label": "ВСКРОЕМ"
+ },
+ {
+  "t": 12.1667,
+  "frame": 365,
+  "type": "enter",
+  "label": "#target_card"
+ },
+ {
+  "t": 12.5,
+  "frame": 375,
+  "type": "enter",
+  "label": "#target_logo_wrap"
+ },
+ {
+  "t": 16.4333,
+  "frame": 493,
+  "type": "cut",
+  "label": "cut to thinking stripped"
+ },
+ {
+  "t": 16.4333,
+  "frame": 493,
+  "type": "enter",
+  "label": "ГДЕ"
+ },
+ {
+  "t": 16.4333,
+  "frame": 493,
+  "type": "word",
+  "label": "ГДЕ"
+ },
+ {
+  "t": 16.5667,
+  "frame": 497,
+  "type": "enter",
+  "label": "МЫШЛЕНИЕ"
+ },
+ {
+  "t": 16.5667,
+  "frame": 497,
+  "type": "word",
+  "label": "МЫШЛЕНИЕ"
+ },
+ {
+  "t": 16.7,
+  "frame": 501,
+  "type": "enter",
+  "label": "КЛОДА?"
+ },
+ {
+  "t": 16.7,
+  "frame": 501,
+  "type": "word",
+  "label": "КЛОДА?"
+ },
+ {
+  "t": 18,
+  "frame": 540,
+  "type": "enter",
+  "label": "#s2_real_card"
+ },
+ {
+  "t": 24.6,
+  "frame": 738,
+  "type": "enter",
+  "label": "#laser_slice"
+ },
+ {
+  "t": 25.5,
+  "frame": 765,
+  "type": "enter",
+  "label": "#void_box"
+ },
+ {
+  "t": 28.2667,
+  "frame": 848,
+  "type": "enter",
+  "label": "#s2_stamp"
+ },
+ {
+  "t": 32.1,
+  "frame": 963,
+  "type": "cut",
+  "label": "cut to masquerade"
+ },
+ {
+  "t": 32.1,
+  "frame": 963,
+  "type": "enter",
+  "label": "ПЕРЕОБУВАНИЕ"
+ },
+ {
+  "t": 32.1,
+  "frame": 963,
+  "type": "word",
+  "label": "ПЕРЕОБУВАНИЕ"
+ },
+ {
+  "t": 32.2333,
+  "frame": 967,
+  "type": "enter",
+  "label": "ЗА"
+ },
+ {
+  "t": 32.2333,
+  "frame": 967,
+  "type": "word",
+  "label": "ЗА"
+ },
+ {
+  "t": 32.3667,
+  "frame": 971,
+  "type": "enter",
+  "label": "1"
+ },
+ {
+  "t": 32.3667,
+  "frame": 971,
+  "type": "word",
+  "label": "1"
+ },
+ {
+  "t": 32.5667,
+  "frame": 977,
+  "type": "enter",
+  "label": "КЛИК"
+ },
+ {
+  "t": 32.5667,
+  "frame": 977,
+  "type": "word",
+  "label": "КЛИК"
+ },
+ {
+  "t": 33.5,
+  "frame": 1005,
+  "type": "enter",
+  "label": "#s3_terminal"
+ },
+ {
+  "t": 39.5,
+  "frame": 1185,
+  "type": "press",
+  "label": "#s3_model_name"
+ },
+ {
+  "t": 44,
+  "frame": 1320,
+  "type": "enter",
+  "label": "#s3_stamp"
+ },
+ {
+  "t": 48.2333,
+  "frame": 1447,
+  "type": "cut",
+  "label": "cut to ask why it matters"
+ },
+ {
+  "t": 48.2333,
+  "frame": 1447,
+  "type": "enter",
+  "label": "А"
+ },
+ {
+  "t": 48.2333,
+  "frame": 1447,
+  "type": "word",
+  "label": "А"
+ },
+ {
+  "t": 48.3667,
+  "frame": 1451,
+  "type": "enter",
+  "label": "В"
+ },
+ {
+  "t": 48.3667,
+  "frame": 1451,
+  "type": "word",
+  "label": "В"
+ },
+ {
+  "t": 48.5,
+  "frame": 1455,
+  "type": "enter",
+  "label": "ЧЁМ"
+ },
+ {
+  "t": 48.5,
+  "frame": 1455,
+  "type": "word",
+  "label": "ЧЁМ"
+ },
+ {
+  "t": 48.6333,
+  "frame": 1459,
+  "type": "enter",
+  "label": "НАЁБ?"
+ },
+ {
+  "t": 48.6333,
+  "frame": 1459,
+  "type": "word",
+  "label": "НАЁБ?"
+ },
+ {
+  "t": 50.6667,
+  "frame": 1520,
+  "type": "enter",
+  "label": "#s4_arg_1"
+ },
+ {
+  "t": 53.3333,
+  "frame": 1600,
+  "type": "enter",
+  "label": "#s4_arg_2"
+ },
+ {
+  "t": 56,
+  "frame": 1680,
+  "type": "enter",
+  "label": "#s4_arg_3"
+ },
+ {
+  "t": 58.9,
+  "frame": 1767,
+  "type": "cut",
+  "label": "cut to no opus reveal"
+ },
+ {
+  "t": 58.9,
+  "frame": 1767,
+  "type": "enter",
+  "label": "#s4_cheat_card"
+ },
+ {
+  "t": 59.9,
+  "frame": 1797,
+  "type": "enter",
+  "label": "#no_opus_badge"
+ },
+ {
+  "t": 63.6333,
+  "frame": 1909,
+  "type": "enter",
+  "label": "#model_card_1"
+ },
+ {
+  "t": 65.2333,
+  "frame": 1957,
+  "type": "enter",
+  "label": "#model_card_2"
+ },
+ {
+  "t": 66.8333,
+  "frame": 2005,
+  "type": "enter",
+  "label": "#model_card_3"
+ },
+ {
+  "t": 69.1333,
+  "frame": 2074,
+  "type": "enter",
+  "label": "#cheap_net_stamp"
+ },
+ {
+  "t": 72.0667,
+  "frame": 2162,
+  "type": "cut",
+  "label": "cut to cost of deception"
+ },
+ {
+  "t": 72.0667,
+  "frame": 2162,
+  "type": "enter",
+  "label": "ЦЕНА"
+ },
+ {
+  "t": 72.0667,
+  "frame": 2162,
+  "type": "word",
+  "label": "ЦЕНА"
+ },
+ {
+  "t": 72.2,
+  "frame": 2166,
+  "type": "enter",
+  "label": "ОБМАНА"
+ },
+ {
+  "t": 72.2,
+  "frame": 2166,
+  "type": "word",
+  "label": "ОБМАНА"
+ },
+ {
+  "t": 79.3333,
+  "frame": 2380,
+  "type": "enter",
+  "label": "#fail_item_1"
+ },
+ {
+  "t": 81.6667,
+  "frame": 2450,
+  "type": "enter",
+  "label": "#fail_item_2"
+ },
+ {
+  "t": 84,
+  "frame": 2520,
+  "type": "enter",
+  "label": "#fail_item_3"
+ },
+ {
+  "t": 87,
+  "frame": 2610,
+  "type": "cut",
+  "label": "cut to zhiguli meme"
+ },
+ {
+  "t": 87,
+  "frame": 2610,
+  "type": "enter",
+  "label": "ЭТО"
+ },
+ {
+  "t": 87,
+  "frame": 2610,
+  "type": "word",
+  "label": "ЭТО"
+ },
+ {
+  "t": 87.1333,
+  "frame": 2614,
+  "type": "enter",
+  "label": "КАК"
+ },
+ {
+  "t": 87.1333,
+  "frame": 2614,
+  "type": "word",
+  "label": "КАК"
+ },
+ {
+  "t": 87.2667,
+  "frame": 2618,
+  "type": "enter",
+  "label": "КУПИТЬ"
+ },
+ {
+  "t": 87.2667,
+  "frame": 2618,
+  "type": "word",
+  "label": "КУПИТЬ"
+ },
+ {
+  "t": 87.4,
+  "frame": 2622,
+  "type": "enter",
+  "label": "ЖИГУЛИ..."
+ },
+ {
+  "t": 87.4,
+  "frame": 2622,
+  "type": "word",
+  "label": "ЖИГУЛИ..."
+ },
+ {
+  "t": 87.5,
+  "frame": 2625,
+  "type": "enter",
+  "label": "#zhiguli_wrap"
+ },
+ {
+  "t": 89.4,
+  "frame": 2682,
+  "type": "enter",
+  "label": "#ferrari_badge"
+ },
+ {
+  "t": 90.2333,
+  "frame": 2707,
+  "type": "enter",
+  "label": "#tape_strip_1"
+ },
+ {
+  "t": 90.5667,
+  "frame": 2717,
+  "type": "enter",
+  "label": "#tape_strip_2"
+ },
+ {
+  "t": 91.4,
+  "frame": 2742,
+  "type": "enter",
+  "label": "#zhiguli_stamp"
+ },
+ {
+  "t": 93.4,
+  "frame": 2802,
+  "type": "cut",
+  "label": "cut to leaked headers"
+ },
+ {
+  "t": 93.4,
+  "frame": 2802,
+  "type": "enter",
+  "label": "ПАЛЕВО"
+ },
+ {
+  "t": 93.4,
+  "frame": 2802,
+  "type": "word",
+  "label": "ПАЛЕВО"
+ },
+ {
+  "t": 93.5333,
+  "frame": 2806,
+  "type": "enter",
+  "label": "В"
+ },
+ {
+  "t": 93.5333,
+  "frame": 2806,
+  "type": "word",
+  "label": "В"
+ },
+ {
+  "t": 93.6667,
+  "frame": 2810,
+  "type": "enter",
+  "label": "ЗАГОЛОВКАХ"
+ },
+ {
+  "t": 93.6667,
+  "frame": 2810,
+  "type": "word",
+  "label": "ЗАГОЛОВКАХ"
+ },
+ {
+  "t": 95,
+  "frame": 2850,
+  "type": "enter",
+  "label": "#s5_header_card"
+ },
+ {
+  "t": 99.1667,
+  "frame": 2975,
+  "type": "enter",
+  "label": "#s5_md5_card"
+ },
+ {
+  "t": 102.3333,
+  "frame": 3070,
+  "type": "enter",
+  "label": "#s5_fable_card"
+ },
+ {
+  "t": 106.8,
+  "frame": 3204,
+  "type": "cut",
+  "label": "cut to final verdict"
+ },
+ {
+  "t": 106.8,
+  "frame": 3204,
+  "type": "enter",
+  "label": "ИТОГ"
+ },
+ {
+  "t": 106.8,
+  "frame": 3204,
+  "type": "word",
+  "label": "ИТОГ"
+ },
+ {
+  "t": 106.9333,
+  "frame": 3208,
+  "type": "enter",
+  "label": "РАССЛЕДОВАНИЯ"
+ },
+ {
+  "t": 106.9333,
+  "frame": 3208,
+  "type": "word",
+  "label": "РАССЛЕДОВАНИЯ"
+ },
+ {
+  "t": 108,
+  "frame": 3240,
+  "type": "enter",
+  "label": "#verdict_card_1"
+ },
+ {
+  "t": 113.5,
+  "frame": 3405,
+  "type": "enter",
+  "label": "#verdict_card_2"
+ },
+ {
+  "t": 115.8,
+  "frame": 3474,
+  "type": "enter",
+  "label": "#verdict_card_3"
+ },
+ {
+  "t": 118.4333,
+  "frame": 3553,
+  "type": "cut",
+  "label": "jumpscare screamer"
+ },
+ {
+  "t": 118.4333,
+  "frame": 3553,
+  "type": "enter",
+  "label": "#jumpscare_content"
+ }
+]
