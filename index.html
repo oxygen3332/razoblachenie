@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>NexoraX Expose Film (Motion runtime)</title>
+<meta name="description" content="Расследование обмана NexoraX и cheat-ai.shop: подмена моделей Claude Opus, вырезанный блок мышления и утечка заголовков.">
 <meta name="viewport" content="width=1080, height=1920">
 <link rel="stylesheet" href="runtime/fonts.css">
 <style>
+/* Hallmark: v2.0.0 | genre: atmospheric | theme: terminal | craft: senior | copy: verbatim | shape: app screen */
+/* Hallmark · waive 47b · .terminal-bar · terminal UI is part of the expose film demonstration */
 @font-face {
   font-family: 'Geist';
   src: url('brand/fonts/geist-600.woff2') format('woff2');
@@ -22,14 +25,45 @@
 }
 
 :root {
-  --bg: #0b0b0b;
-  --bg-card: rgba(18, 20, 28, 0.94);
+  --bg: #0a0c10;
+  --bg-card: #12151d;
+  --bg-card-glass: rgba(18, 21, 29, 0.95);
+  --bg-terminal: #0d0f15;
+  --bg-terminal-bar: #161a24;
   --ink: #f5f5f5;
   --ink-soft: #b8b8c8;
+  --ink-muted: #6e7687;
   --accent: #ff6a1a;
   --red: #ef4444;
+  --red-light: #fca5a5;
   --green: #10b981;
+  --green-light: #6ee7b7;
   --cyan: #38bdf8;
+  --yellow: #fde047;
+  --border-card: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.6);
+  --shadow-deep: 0 24px 60px rgba(0, 0, 0, 0.8);
+  --stamp-red-bg: rgba(239, 68, 68, 0.16);
+  --stamp-orange-bg: rgba(255, 106, 26, 0.16);
+  --grid-line: rgba(255, 255, 255, 0.03);
+  --tape-bg: rgba(225, 230, 235, 0.78);
+  --tape-border: rgba(160, 170, 180, 0.8);
+  --crt-scanline: rgba(0, 0, 0, 0.6);
+  --bg-target-logo: #18181b;
+  --bg-badge-white: rgba(255, 255, 255, 0.08);
+  --bg-code-dark: rgba(0, 0, 0, 0.65);
+  --dot-red: #ff5f56;
+  --dot-yellow: #ffbd2e;
+  --dot-green: #27c93f;
+  --terminal-divider: rgba(255, 255, 255, 0.1);
+  --cyan-border: rgba(56, 189, 248, 0.6);
+  --cyan-badge-bg: rgba(56, 189, 248, 0.15);
+  --cyan-badge-border: rgba(56, 189, 248, 0.5);
+  --cyan-bg-verdict: rgba(56, 189, 248, 0.12);
+  --red-border-subtle: rgba(239, 68, 68, 0.4);
+  --red-border-card: rgba(239, 68, 68, 0.6);
+  --orange-border-card: rgba(255, 106, 26, 0.6);
   --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'GeistMono', monospace;
 }
@@ -38,8 +72,9 @@
 html, body {
   width: 1080px;
   height: 1920px;
-  overflow: hidden;
-  background: #000;
+  overflow-x: clip;
+  overflow-y: clip;
+  background: var(--bg);
   font-family: var(--font-sans);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -55,15 +90,14 @@ html, body {
   background: var(--bg);
 }
 
-/* Subtle background vignette & grid atmosphere */
+/* Crisp grid texture without noisy blur */
 .ambient-grid {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle at 50% 50%, rgba(255, 106, 26, 0.05) 0%, transparent 70%),
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 80px 80px, 80px 80px;
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 80px 80px, 80px 80px;
   pointer-events: none;
 }
 
@@ -77,11 +111,11 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 50px;
+  padding: 80px 48px;
   text-align: center;
 }
 
-/* Common Typography */
+/* Typography */
 .hero-title {
   font-size: 84px;
   line-height: 1.08;
@@ -104,40 +138,35 @@ html, body {
   color: var(--cyan);
 }
 
-/* Heavy Impact Stamps */
+/* Impact Stamps */
 .stamp {
   display: inline-block;
   padding: 24px 44px;
-  border: 6px solid var(--red);
-  border-radius: 28px;
-  color: var(--red);
-  font-size: 52px;
+  border: 5px solid var(--red);
+  border-radius: 24px;
+  color: var(--ink);
+  font-size: 50px;
   line-height: 1.15;
   font-weight: 900;
   letter-spacing: 0.02em;
-  background: rgba(239, 68, 68, 0.16);
-  box-shadow: 0 0 60px rgba(239, 68, 68, 0.5), inset 0 0 30px rgba(239, 68, 68, 0.2);
-  text-shadow: 0 0 30px rgba(239, 68, 68, 0.6);
+  background: var(--stamp-red-bg);
   text-align: center;
 }
 
 .stamp.orange {
   border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(255, 106, 26, 0.16);
-  box-shadow: 0 0 60px rgba(255, 106, 26, 0.5), inset 0 0 30px rgba(255, 106, 26, 0.2);
-  text-shadow: 0 0 30px rgba(255, 106, 26, 0.6);
+  color: var(--ink);
+  background: var(--stamp-orange-bg);
 }
 
 /* UI Cards */
 .card {
   width: 100%;
   max-width: 960px;
-  background: var(--bg-card);
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  border-radius: 32px;
-  padding: 40px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  background: var(--bg-card-glass);
+  border: 2px solid var(--border-card);
+  border-radius: 28px;
+  padding: 36px;
   text-align: center;
 }
 
@@ -145,26 +174,25 @@ html, body {
 .terminal {
   width: 100%;
   max-width: 960px;
-  background: #0d0f15;
-  border: 2px solid rgba(255, 255, 255, 0.14);
-  border-radius: 28px;
+  background: var(--bg-terminal);
+  border: 2px solid var(--border-card);
+  border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.8);
   text-align: left;
 }
 
 .terminal-bar {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--bg-terminal-bar);
   padding: 16px 24px;
   display: flex;
   align-items: center;
   gap: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .terminal-dot {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
 }
 
@@ -183,15 +211,14 @@ html, body {
   color: var(--ink);
 }
 
-/* Zhiguli & Ferrari Composition */
+/* Zhiguli Composition */
 .car-container {
   position: relative;
   width: 940px;
   height: 620px;
-  border-radius: 36px;
+  border-radius: 32px;
   overflow: hidden;
-  border: 3px solid rgba(255, 255, 255, 0.16);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.85);
+  border: 3px solid var(--border-card);
 }
 
 .car-img {
@@ -206,28 +233,25 @@ html, body {
   top: 240px;
   width: 150px;
   height: 200px;
-  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.85));
   z-index: 5;
 }
 
-/* Realistic Frosted Duct Tape (NO text) */
+/* Frosted Duct Tape (clean tape, no text) */
 .duct-tape {
   position: absolute;
   width: 190px;
   height: 48px;
-  background: rgba(225, 230, 235, 0.78);
-  border-left: 2px dashed rgba(160, 170, 180, 0.8);
-  border-right: 2px dashed rgba(160, 170, 180, 0.8);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  background: var(--tape-bg);
+  border-left: 2px dashed var(--tape-border);
+  border-right: 2px dashed var(--tape-border);
   z-index: 6;
-  backdrop-filter: blur(2px);
 }
 
 /* Jumpscare Horror Styles */
 .jumpscare-overlay {
   position: absolute;
   inset: 0;
-  background: #000;
+  background: var(--bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -238,17 +262,9 @@ html, body {
 .crt-scanlines {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0px, rgba(0, 0, 0, 0.6) 3px, transparent 3px, transparent 7px);
+  background: repeating-linear-gradient(0deg, var(--crt-scanline) 0px, var(--crt-scanline) 3px, transparent 3px, transparent 7px);
   pointer-events: none;
   z-index: 10;
-}
-
-.horror-vignette {
-  position: absolute;
-  inset: 0;
-  box-shadow: inset 0 0 160px rgba(255, 0, 0, 0.9), inset 0 0 60px rgba(255, 255, 255, 0.35);
-  pointer-events: none;
-  z-index: 11;
 }
 </style>
 </head>
@@ -264,27 +280,27 @@ html, body {
     <div id="s1_web_wrap" style="position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;">
       <img src="brand/screens/01.jpg" style="position:absolute;left:50%;top:360px;width:1920px;height:1080px;transform:translateX(-50%) scale(0.92);transform-origin:top center;" alt="cheat-ai.shop website hero">
       <div id="s1_promo_badge" style="position:absolute;left:90px;top:1060px;width:900px;" class="card" data-ui="captured">
-        <div style="font-size:36px;font-weight:700;color:#fef08a;margin-bottom:12px;">СВЕРХДЕШЁВЫЕ ЦЕНЫ:</div>
-        <div style="font-size:94px;font-weight:900;color:#22c55e;text-shadow:0 0 45px rgba(34,197,94,0.7);letter-spacing:-0.02em;">3 РУБЛЯ</div>
-        <div style="font-size:38px;font-weight:700;color:#f5f5f5;margin-top:10px;">за 1 000 000 токенов! 🔥</div>
+        <div style="font-size:32px;font-weight:700;color:var(--yellow);margin-bottom:12px;">СВЕРХДЕШЁВЫЕ ЦЕНЫ:</div>
+        <div style="font-size:94px;font-weight:900;color:var(--green);letter-spacing:-0.02em;">3 РУБЛЯ</div>
+        <div style="font-size:36px;font-weight:700;color:var(--ink);margin-top:10px;">за 1 000 000 токенов</div>
       </div>
     </div>
   </section>
 
   <section id="s1_p2" class="scene">
-    <div id="mda_text" style="font-size:120px;font-weight:900;color:#ffffff;text-shadow:0 0 50px rgba(255,255,255,0.4);margin-bottom:30px;">МДА... 🦣</div>
-    <div id="everyday_text" style="font-size:52px;font-weight:600;color:var(--ink-soft);line-height:1.3;margin-bottom:60px;">Это вы слышите каждый день...</div>
+    <div id="mda_text" style="font-size:120px;font-weight:900;color:var(--ink);margin-bottom:30px;">МДА…</div>
+    <div id="everyday_text" style="font-size:52px;font-weight:600;color:var(--ink-soft);line-height:1.3;margin-bottom:60px;">Это вы слышите каждый день…</div>
     <div id="mammoth_stamp" class="stamp" style="transform:rotate(-3deg);">И ИМЕННО ТАК<br>НАЁБЫВАЮТ МАМОНТОВ</div>
   </section>
 
   <section id="s1_p3" class="scene">
     <div id="target_headline" class="hero-title" style="margin-bottom:50px;">СЕГОДНЯ МЫ ВСКРОЕМ</div>
     <div id="target_card" class="card" data-ui="captured" style="display:flex;flex-direction:column;align-items:center;padding:50px 40px;">
-      <div id="target_logo_wrap" style="width:140px;height:140px;background:#18181b;border-radius:36px;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,0.2);box-shadow:0 0 40px rgba(255,106,26,0.3);margin-bottom:30px;">
-        <svg viewBox="0 0 32 32" width="90" height="90" fill="none"><path d="M8 8.5 14 16l-6 7.5M24 8.5 18 16l6 7.5" stroke="#ff6a1a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div id="target_logo_wrap" style="width:140px;height:140px;background:var(--bg-target-logo);border-radius:36px;display:flex;align-items:center;justify-content:center;border:2px solid var(--border-card);margin-bottom:30px;">
+        <svg viewBox="0 0 32 32" width="90" height="90" fill="none" aria-hidden="true"><path d="M8 8.5 14 16l-6 7.5M24 8.5 18 16l6 7.5" stroke="#ff6a1a" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div style="font-size:68px;font-weight:900;color:var(--cyan);letter-spacing:-0.02em;margin-bottom:16px;">cheat-ai.shop</div>
-      <div style="display:inline-block;padding:12px 32px;border-radius:999px;background:rgba(255,255,255,0.08);font-size:32px;font-weight:700;color:var(--ink);">он же <strong style="color:var(--accent)">NexoraX Bot</strong></div>
+      <div style="display:inline-block;padding:12px 32px;border-radius:999px;background:var(--bg-badge-white);font-size:32px;font-weight:700;color:var(--ink);">он же <strong style="color:var(--accent)">NexoraX Bot</strong></div>
     </div>
   </section>
 
@@ -295,24 +311,24 @@ html, body {
     <div id="s2_headline" class="hero-title">ГДЕ МЫШЛЕНИЕ КЛОДА?</div>
     <div id="s2_real_card" class="card" data-ui="captured" style="text-align:left;position:relative;margin-bottom:36px;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;">
-        <span style="font-size:28px;font-weight:800;color:var(--green);">✓ НАСТОЯЩИЙ OPUS 5.5</span>
-        <span style="font-size:20px;font-weight:800;background:var(--green);color:#000;padding:6px 18px;border-radius:10px;">ANTHROPIC API</span>
+        <span style="font-size:28px;font-weight:800;color:var(--green);">НАСТОЯЩИЙ OPUS 5.5</span>
+        <span style="font-size:20px;font-weight:800;background:var(--green);color:var(--bg);padding:6px 18px;border-radius:10px;">ANTHROPIC API</span>
       </div>
-      <div id="thinking_block" style="font-family:var(--font-mono);font-size:26px;background:rgba(0,0,0,0.65);padding:24px 28px;border-radius:20px;line-height:1.6;position:relative;overflow:hidden;">
-        <div id="laser_slice" style="position:absolute;left:0;top:52%;width:100%;height:4px;background:#ef4444;box-shadow:0 0 25px #ef4444;z-index:10;transform-origin:left;transform:scaleX(0);"></div>
+      <div id="thinking_block" style="font-family:var(--font-mono);font-size:26px;background:var(--bg-code-dark);padding:24px 28px;border-radius:20px;line-height:1.6;position:relative;overflow:hidden;">
+        <div id="laser_slice" style="position:absolute;left:0;top:52%;width:100%;height:4px;background:var(--red);z-index:10;transform-origin:left;transform:scaleX(0);"></div>
         <div id="thinking_block_top">
           <div>"type": <span style="color:var(--cyan);">"thinking"</span>,</div>
-          <div>"thinking": "deep logic analysis...",</div>
+          <div>"thinking": "deep logic analysis…",</div>
         </div>
         <div id="thinking_block_bot">
-          <div id="sig_glow" style="color:#34d399;font-weight:800;margin-top:6px;">"signature": "EiYKAw..." <span style="color:#6ee7b7;">// КРИПТО-ПОДПИСЬ</span></div>
+          <div id="sig_glow" style="color:var(--green);font-weight:800;margin-top:6px;">"signature": "EiYKAw…" <span style="color:var(--green-light);">// КРИПТО-ПОДПИСЬ</span></div>
         </div>
       </div>
     </div>
 
-    <div id="void_box" class="card" data-ui="captured" style="border:3px solid var(--red);background:rgba(239,68,68,0.12);padding:32px 30px;margin-bottom:36px;">
-      <div style="font-size:32px;font-weight:900;color:var(--red);margin-bottom:8px;">CHEAT-AI GATEWAY:</div>
-      <div style="font-family:var(--font-mono);font-size:34px;font-weight:900;color:#ffffff;">THINKING: ВЫРЕЗАН // 0 РАССУЖДЕНИЙ</div>
+    <div id="void_box" class="card" data-ui="captured" style="border:3px solid var(--red);background:var(--stamp-red-bg);padding:32px 30px;margin-bottom:36px;">
+      <div style="font-size:28px;font-weight:900;color:var(--red);margin-bottom:8px;">CHEAT-AI GATEWAY:</div>
+      <div style="font-family:var(--font-mono);font-size:32px;font-weight:900;color:var(--ink);">THINKING: ВЫРЕЗАН // 0 РАССУЖДЕНИЙ</div>
     </div>
 
     <div id="s2_stamp" class="stamp" style="transform:rotate(2.5deg);">ФАЗА МЫСЛИ ОТСУТСТВУЕТ</div>
@@ -322,19 +338,21 @@ html, body {
   <!-- SCENE 3: MASQUERADE / INSTANT FLIP (963 - 1447 frames)             -->
   <!-- =================================================================== -->
   <section id="scene3" class="scene">
-    <div id="s3_headline" class="hero-title">ПЕРЕОБУВАНИЕ ЗА 1 КЛИК</div>
+    <div id="s3_headline" class="hero-title">ПРИМИТИВНЫЙ МАСКАРАД</div>
     <div id="s3_terminal" class="terminal" data-ui="captured">
       <div class="terminal-bar">
-        <div class="terminal-dot" style="background:#ff5f56;"></div>
-        <div class="terminal-dot" style="background:#ffbd2e;"></div>
-        <div class="terminal-dot" style="background:#27c93f;"></div>
+        <div class="terminal-dot" style="background:var(--dot-red);"></div>
+        <div class="terminal-dot" style="background:var(--dot-yellow);"></div>
+        <div class="terminal-dot" style="background:var(--dot-green);"></div>
         <span class="terminal-title">curl api.cheat-ai.shop/v1/chat/completions</span>
       </div>
       <div class="terminal-body">
         <div style="color:var(--ink-soft);margin-bottom:14px;">$ curl -X POST api.cheat-ai.shop \</div>
         <div style="margin-left:24px;margin-bottom:14px;">-H "Authorization: Bearer cheat-key" \</div>
-        <div style="margin-left:24px;margin-bottom:20px;">-d '{"model": "<span style="position:relative;display:inline-block;"><span id="s3_model_opus" style="color:var(--cyan);font-weight:800;">claude-opus-5.5</span><span id="s3_model_sonnet" style="position:absolute;left:0;top:0;color:var(--accent);font-weight:800;white-space:nowrap;">claude-sonnet-4.6</span></span>", "prompt": "Кто ты?"}'</div>
-        <div style="height:2px;background:rgba(255,255,255,0.1);margin:24px 0;"></div>
+        <div style="margin-left:24px;margin-bottom:20px;">
+          -d '{"model": "<span style="position:relative;display:inline-block;"><span id="s3_model_opus" style="color:var(--cyan);font-weight:800;">claude-opus-5.5</span><span id="s3_model_sonnet" style="position:absolute;left:0;top:0;color:var(--accent);font-weight:800;white-space:nowrap;">claude-sonnet-4.6</span><span id="s3_model_haiku" style="position:absolute;left:0;top:0;color:var(--green);font-weight:800;white-space:nowrap;">claude-haiku-4.5</span></span>", "prompt": "Кто ты?"}'
+        </div>
+        <div style="height:2px;background:var(--terminal-divider);margin:24px 0;"></div>
         <div style="font-size:22px;color:var(--ink-soft);margin-bottom:10px;">ОТВЕТ ШЛЮЗА:</div>
         <div style="position:relative;height:55px;">
           <div id="s3_response_opus" style="position:absolute;left:0;top:0;font-size:38px;font-weight:800;color:var(--cyan);line-height:1.3;">
@@ -343,27 +361,30 @@ html, body {
           <div id="s3_response_sonnet" style="position:absolute;left:0;top:0;font-size:38px;font-weight:800;color:var(--accent);line-height:1.3;">
             «Я Claude Sonnet»
           </div>
+          <div id="s3_response_haiku" style="position:absolute;left:0;top:0;font-size:38px;font-weight:800;color:var(--green);line-height:1.3;">
+            «Я Claude Haiku»
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Oversized Cursor tip at (0,0) -->
-    <svg id="s3_cursor" width="48" height="68" viewBox="0 0 32 46" style="position:absolute;left:0;top:0;z-index:99;overflow:visible;">
+    <svg id="s3_cursor" width="48" height="68" viewBox="0 0 32 46" style="position:absolute;left:0;top:0;z-index:99;overflow:visible;" aria-hidden="true">
       <path d="M0 0 L0 38 L10 29 L17 45 L25 41 L18 26 L31 26 Z" fill="#ffffff" stroke="#000000" stroke-width="3" stroke-linejoin="round"/>
     </svg>
 
-    <div id="s3_stamp" class="stamp orange" style="transform:rotate(-3deg);margin-top:40px;">ТУПОЙ СИСТЕМНЫЙ ПРОМПТ</div>
+    <div id="s3_stamp" class="stamp orange" style="transform:rotate(-3deg);margin-top:40px;">МОМЕНТАЛЬНО ПЕРЕОБУВАЕТСЯ!</div>
   </section>
 
   <!-- =================================================================== -->
   <!-- SCENE 4: ANALOGY & ZHIGULI MEME (1447 - 2802 frames)                -->
   <!-- =================================================================== -->
   <section id="s4_p1" class="scene">
-    <div id="s4_ask_headline" class="hero-title" style="margin-bottom:60px;">А В ЧЁМ НАЁБ?</div>
-    <div class="card" data-ui="captured" style="display:flex;flex-direction:column;gap:36px;padding:50px 40px;">
-      <div id="s4_arg_1" style="font-size:48px;font-weight:700;color:var(--ink);">Ответ выдаёт...</div>
-      <div id="s4_arg_2" style="font-size:48px;font-weight:700;color:var(--ink);">Код пишет...</div>
-      <div id="s4_arg_3" style="font-size:56px;font-weight:900;color:var(--accent);">Какая разница под капотом?</div>
+    <div id="s4_ask_headline" class="hero-title" style="margin-bottom:50px;">А В ЧЁМ НАЁБ?</div>
+    <div class="card" data-ui="captured" style="display:flex;flex-direction:column;gap:30px;padding:46px 40px;text-align:left;">
+      <div id="s4_arg_1" style="font-size:38px;font-weight:700;color:var(--ink);">01. В КАТАЛОГЕ ТОЛЬКО OPUS И FABLE</div>
+      <div id="s4_arg_2" style="font-size:38px;font-weight:700;color:var(--ink-soft);">02. ДОСТУП ПОКУПАЕТЕ ТОЛЬКО К НИМ</div>
+      <div id="s4_arg_3" style="font-size:44px;font-weight:900;color:var(--accent);">03. А ПРО ЭТИ МОДЕЛИ: ТИШИНА!</div>
     </div>
   </section>
 
@@ -371,20 +392,20 @@ html, body {
     <div id="s4_cheat_card" class="card" data-ui="captured" style="border:2px solid var(--accent);margin-bottom:30px;padding:32px 30px;">
       <div style="font-size:40px;font-weight:900;color:var(--accent);">А У CHEAT-AI?</div>
     </div>
-    <div id="no_opus_badge" class="stamp" style="transform:rotate(-2deg);margin-bottom:40px;font-size:54px;">
-      У НИХ ВООБЩЕ НЕТ ОПУСА!
+    <div id="no_opus_badge" class="stamp" style="transform:rotate(-2deg);margin-bottom:40px;font-size:52px;">
+      У НИХ ВООБЩЕ НЕТ НАСТОЯЩЕГО OPUS!
     </div>
     <div style="display:flex;flex-direction:column;gap:20px;width:100%;max-width:960px;margin-bottom:36px;">
       <div id="model_card_1" class="card" data-ui="captured" style="padding:24px 30px;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-size:32px;font-weight:800;color:#ffffff;">Claude Opus 5.5</span>
+        <span style="font-size:32px;font-weight:800;color:var(--ink);">Claude Opus 5.5</span>
         <span style="font-size:22px;color:var(--cyan);font-family:var(--font-mono);">ID: mini-proxy-v1</span>
       </div>
       <div id="model_card_2" class="card" data-ui="captured" style="padding:24px 30px;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-size:32px;font-weight:800;color:#ffffff;">Claude Sonnet 4.6</span>
+        <span style="font-size:32px;font-weight:800;color:var(--ink);">Claude Sonnet 4.6</span>
         <span style="font-size:22px;color:var(--cyan);font-family:var(--font-mono);">ID: mini-proxy-v1</span>
       </div>
       <div id="model_card_3" class="card" data-ui="captured" style="padding:24px 30px;display:flex;justify-content:space-between;align-items:center;">
-        <span style="font-size:32px;font-weight:800;color:#ffffff;">Claude Opus 4.8</span>
+        <span style="font-size:32px;font-weight:800;color:var(--ink);">Claude Opus 4.8</span>
         <span style="font-size:22px;color:var(--cyan);font-family:var(--font-mono);">ID: mini-proxy-v1</span>
       </div>
     </div>
@@ -394,60 +415,53 @@ html, body {
   </section>
 
   <!-- =================================================================== -->
-  <!-- SCENE 4: PART 3A - SYSTEM PROMPT INJECTION (2162 - 2375 frames)     -->
+  <!-- SCENE 4: PART 3A - SYSTEM PROMPT INJECTION (2175 - 2385 frames)     -->
   <!-- =================================================================== -->
   <section id="s4_p3a" class="scene">
-    <div id="s4_p3a_title" class="hero-title" style="margin-bottom:34px;">СИСТЕМНЫЙ ПРОМПТ</div>
+    <div id="s4_p3a_title" class="hero-title" style="margin-bottom:34px;">ПОДМЕНА В ПРОМПТЕ</div>
     
     <!-- Injection Terminal Card -->
-    <div id="s4_sys_prompt_card" class="card" data-ui="captured" style="width:100%;max-width:960px;padding:32px 36px;text-align:left;border:2px solid rgba(56,189,248,0.6);background:rgba(12,18,28,0.92);box-shadow:0 0 60px rgba(56,189,248,0.28);margin-bottom:24px;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
-        <span style="display:inline-block;padding:8px 20px;border-radius:12px;background:rgba(56,189,248,0.18);border:1.5px solid rgba(56,189,248,0.6);font-family:var(--font-mono);font-size:24px;color:var(--cyan);font-weight:800;">
-          ⚙️ INJECTED_SYSTEM_PROMPT
+    <div id="s4_sys_prompt_card" class="card" data-ui="captured" style="width:100%;max-width:960px;padding:32px 36px;text-align:left;border:2px solid var(--cyan-border);margin-bottom:28px;">
+      <div style="margin-bottom:18px;">
+        <span style="display:inline-block;padding:8px 20px;border-radius:12px;background:var(--cyan-badge-bg);border:1.5px solid var(--cyan-badge-border);font-family:var(--font-mono);font-size:22px;color:var(--cyan);font-weight:800;">
+          PROXY_INJECTION
         </span>
       </div>
-      <div style="font-family:var(--font-mono);font-size:32px;color:#ffffff;line-height:1.55;background:rgba(0,0,0,0.7);padding:26px 30px;border-radius:20px;border:1px solid rgba(255,255,255,0.14);">
-        <span style="color:var(--cyan);font-weight:800;">system:</span> <span style="color:#fde047;font-weight:700;">"Ты — claude-opus-5.5."</span><br>
-        <span style="color:var(--ink-muted);font-size:24px;font-style:italic;">// заставляют дешёвую сетку притворяться опусом</span>
-      </div>
-    </div>
-
-    <!-- Dialogue Quote Card -->
-    <div id="s4_dialogue_card" class="card" data-ui="captured" style="width:100%;max-width:960px;padding:26px 34px;text-align:left;border:2px solid rgba(255,255,255,0.16);background:rgba(18,18,18,0.85);margin-bottom:28px;">
-      <div style="font-size:32px;font-weight:700;color:var(--ink-soft);line-height:1.35;">
-        💬 «В простых диалогах вы <span style="color:#ffffff;font-weight:900;border-bottom:3px solid var(--accent);">не заметите подвоха</span>...»
+      <div style="font-family:var(--font-mono);font-size:30px;color:var(--ink);line-height:1.55;background:var(--bg-code-dark);padding:26px 30px;border-radius:20px;border:1px solid var(--border-subtle);">
+        <span style="color:var(--cyan);font-weight:800;">system:</span> <span style="color:var(--yellow);font-weight:700;">"Ты: ${model}."</span><br>
+        <span style="color:var(--ink-muted);font-size:22px;font-style:italic;">// прокси втихаря дописывает в системный промпт</span>
       </div>
     </div>
 
     <!-- Slamming Warning Stamp -->
-    <div id="s4_dumber_stamp" class="stamp" style="transform:rotate(-3deg);font-size:48px;max-width:960px;line-height:1.25;color:#ffffff;border-color:#ff334b;background:rgba(255,51,75,0.22);box-shadow:0 0 60px rgba(255,51,75,0.65), inset 0 0 30px rgba(255,51,75,0.3);text-shadow:0 0 40px rgba(255,51,75,0.9);">
-      МОДЕЛЬ ОТ ЭТОГО НЕ СТАНЕТ УМНЕЕ!
+    <div id="s4_dumber_stamp" class="stamp" style="transform:rotate(-3deg);font-size:44px;max-width:960px;line-height:1.25;">
+      МОДЕЛЬ ОТ ЭТОЙ СТРОЧКИ УМНЕЕ НЕ СТАНОВИТСЯ!
     </div>
   </section>
 
   <!-- =================================================================== -->
-  <!-- SCENE 4: PART 3B - 10-FILE FAILURE CASCADE (2375 - 2610 frames)     -->
+  <!-- SCENE 4: PART 3B - FAILURE CASCADE (2385 - 2635 frames)             -->
   <!-- =================================================================== -->
   <section id="s4_p3b" class="scene">
     <div id="s4_p3b_title" class="hero-title" style="margin-bottom:40px;">ЦЕНА ОБМАНА</div>
     <div style="display:flex;flex-direction:column;gap:26px;width:100%;max-width:960px;">
-      <div id="fail_item_1" class="card" data-ui="captured" style="border:2px solid rgba(239,68,68,0.4);text-align:left;padding:32px 36px;">
-        <div style="font-size:24px;color:var(--red);font-weight:800;margin-bottom:8px;">📁 НА ПРОЕКТЕ ИЗ 10 ФАЙЛОВ:</div>
-        <div style="font-size:36px;font-weight:900;color:#ffffff;">Всё рассыплется на первом же шаге</div>
+      <div id="fail_item_1" class="card" data-ui="captured" style="border:2px solid var(--red-border-subtle);text-align:left;padding:32px 36px;">
+        <div style="font-size:24px;color:var(--red);font-weight:800;margin-bottom:8px;">01. АРХИТЕКТУРА И 10 ФАЙЛОВ:</div>
+        <div style="font-size:36px;font-weight:900;color:var(--ink);">Архитектуру на 10 файлов она не напишет</div>
       </div>
-      <div id="fail_item_2" class="card" data-ui="captured" style="border:2px solid rgba(239,68,68,0.4);text-align:left;padding:32px 36px;">
-        <div style="font-size:24px;color:var(--red);font-weight:800;margin-bottom:8px;">💥 СБОРКА И ЛОГИКА:</div>
-        <div style="font-size:36px;font-weight:900;color:#ffffff;">Логика завалена, код не компилируется</div>
+      <div id="fail_item_2" class="card" data-ui="captured" style="border:2px solid var(--red-border-subtle);text-align:left;padding:32px 36px;">
+        <div style="font-size:24px;color:var(--red);font-weight:800;margin-bottom:8px;">02. СЛОЖНАЯ ЛОГИКА:</div>
+        <div style="font-size:36px;font-weight:900;color:var(--ink);">И логические задачи завалит</div>
       </div>
       <div id="fail_item_3" class="card" data-ui="captured" style="border:2px solid var(--accent);text-align:left;padding:32px 36px;">
-        <div style="font-size:24px;color:var(--accent);font-weight:800;margin-bottom:8px;">💸 БИЛЛИНГ:</div>
-        <div style="font-size:36px;font-weight:900;color:#ffffff;">А с баланса спишут как за флагман!</div>
+        <div style="font-size:24px;color:var(--accent);font-weight:800;margin-bottom:8px;">03. СПИСАНИЕ БАЛАНСА:</div>
+        <div style="font-size:36px;font-weight:900;color:var(--ink);">А деньги с тебя спишут как за флагман!</div>
       </div>
     </div>
   </section>
 
   <section id="s4_p4" class="scene">
-    <div id="zhiguli_title" class="hero-title" style="font-size:68px;margin-bottom:30px;">ЭТО КАК КУПИТЬ ЖИГУЛИ...</div>
+    <div id="zhiguli_title" class="hero-title" style="font-size:62px;margin-bottom:30px;">КАК ПРОДАТЬ ЖИГУЛИ С ШИЛЬДИКОМ FERRARI</div>
     <div id="zhiguli_wrap" class="car-container">
       <img src="public/images/rusty_zhiguli.jpg" class="car-img" alt="Rusty Zhiguli in snow">
       <img id="ferrari_badge" src="public/images/ferrari_badge.svg" class="ferrari-badge" alt="Ferrari shield">
@@ -466,23 +480,23 @@ html, body {
   <section id="scene5" class="scene">
     <div id="s5_headline" class="hero-title">ПАЛЕВО В ЗАГОЛОВКАХ</div>
     <div id="s5_header_card" class="card" data-ui="captured" style="text-align:left;margin-bottom:26px;">
-      <div style="font-size:22px;color:var(--red);font-weight:800;margin-bottom:12px;">🚨 УТЕЧКА ШЛЮЗА В HEADERS:</div>
-      <div style="font-family:var(--font-mono);font-size:24px;background:rgba(0,0,0,0.6);padding:20px 24px;border-radius:18px;line-height:1.6;">
+      <div style="font-size:22px;color:var(--red);font-weight:800;margin-bottom:12px;">УТЕЧКА ШЛЮЗА В HEADERS:</div>
+      <div style="font-family:var(--font-mono);font-size:24px;background:var(--bg-code-dark);padding:20px 24px;border-radius:18px;line-height:1.6;">
         <div>access-control-expose-headers:</div>
-        <div id="leak_highlight" style="color:#fb7185;font-weight:900;font-size:28px;">x-nexorax-credits-spent</div>
+        <div id="leak_highlight" style="color:var(--red-light);font-weight:900;font-size:28px;">x-nexorax-credits-spent</div>
       </div>
     </div>
 
     <div id="s5_md5_card" class="card" data-ui="captured" style="text-align:left;margin-bottom:26px;">
-      <div style="font-size:22px;color:var(--ink-soft);font-weight:800;margin-bottom:12px;">🔑 СЛУЧАЙНЫЙ MD5 ХЭШ ВМЕСТО ID:</div>
-      <div style="font-family:var(--font-mono);font-size:26px;color:var(--cyan);background:rgba(0,0,0,0.6);padding:18px 24px;border-radius:18px;">
-        "id": "chatcmpl-b827f8a3d4..."
+      <div style="font-size:22px;color:var(--ink-soft);font-weight:800;margin-bottom:12px;">ФЕЙКОВЫЙ MD5 ХЭШ ВМЕСТО РЕАЛЬНОГО ID:</div>
+      <div style="font-family:var(--font-mono);font-size:26px;color:var(--cyan);background:var(--bg-code-dark);padding:18px 24px;border-radius:18px;">
+        "id": "chatcmpl-b827f8a3d4…"
       </div>
     </div>
 
-    <div id="s5_fable_card" class="card" data-ui="captured" style="border:3px solid var(--red);background:rgba(239,68,68,0.12);padding:28px 30px;">
-      <div style="font-size:24px;color:var(--red);font-weight:800;margin-bottom:8px;">БИТЫЙ КАТАЛОГ (FABLE-5):</div>
-      <div style="font-family:var(--font-mono);font-size:36px;font-weight:900;color:#ffffff;">HTTP 404 NOT FOUND</div>
+    <div id="s5_fable_card" class="card" data-ui="captured" style="border:3px solid var(--red);background:var(--stamp-red-bg);padding:28px 30px;">
+      <div style="font-size:24px;color:var(--red);font-weight:800;margin-bottom:8px;">БИТЫЙ КАТАЛОГ (FABLE 5):</div>
+      <div style="font-family:var(--font-mono);font-size:36px;font-weight:900;color:var(--ink);">HTTP 404 NOT FOUND</div>
     </div>
   </section>
 
@@ -492,29 +506,28 @@ html, body {
   <section id="scene6_verdict" class="scene">
     <div id="s6_headline" class="hero-title" style="margin-bottom:40px;">ИТОГ РАССЛЕДОВАНИЯ</div>
     <div style="display:flex;flex-direction:column;gap:26px;width:100%;max-width:960px;">
-      <div id="verdict_card_1" class="card" data-ui="captured" style="border:2px solid rgba(239,68,68,0.6);background:rgba(239,68,68,0.12);text-align:left;padding:32px 36px;">
-        <div style="font-size:22px;color:var(--red);font-weight:800;margin-bottom:8px;">🏷️ ОБМАН ОЖИДАНИЙ:</div>
-        <div style="font-size:32px;font-weight:900;color:#ffffff;line-height:1.3;">Под видом флагмана — <span style="color:var(--red)">дешёвая мини-моделька</span> с фейковым бейджиком.</div>
+      <div id="verdict_card_1" class="card" data-ui="captured" style="border:2px solid var(--red-border-card);background:var(--stamp-red-bg);text-align:left;padding:32px 36px;">
+        <div style="font-size:22px;color:var(--red);font-weight:800;margin-bottom:8px;">01. ПОДМЕНА МОДЕЛИ:</div>
+        <div style="font-size:32px;font-weight:900;color:var(--ink);line-height:1.3;">Под видом флагмана: <span style="color:var(--red)">дешёвая мини-моделька</span> с надетым бейджиком.</div>
       </div>
-      <div id="verdict_card_2" class="card" data-ui="captured" style="border:2px solid rgba(255,106,26,0.6);background:rgba(255,106,26,0.12);text-align:left;padding:32px 36px;">
-        <div style="font-size:22px;color:var(--accent);font-weight:800;margin-bottom:8px;">⚠️ БУДЬТЕ БДИТЕЛЬНЫ:</div>
-        <div style="font-size:32px;font-weight:900;color:#ffffff;line-height:1.3;">Не ведитесь на развод <strong style="color:var(--accent)">cheat-ai.shop</strong> и сомнительных прокси!</div>
+      <div id="verdict_card_2" class="card" data-ui="captured" style="border:2px solid var(--orange-border-card);background:var(--stamp-orange-bg);text-align:left;padding:32px 36px;">
+        <div style="font-size:22px;color:var(--accent);font-weight:800;margin-bottom:8px;">02. ПРЕДОСТЕРЕЖЕНИЕ:</div>
+        <div style="font-size:32px;font-weight:900;color:var(--ink);line-height:1.3;">Не ведитесь на развод <strong style="color:var(--accent)">cheat-ai.shop</strong> и сомнительных прокси!</div>
       </div>
-      <div id="verdict_card_3" class="card" data-ui="captured" style="border:2px solid rgba(56,189,248,0.6);background:rgba(56,189,248,0.12);text-align:left;padding:32px 36px;">
-        <div style="font-size:22px;color:var(--cyan);font-weight:800;margin-bottom:8px;">🛡️ ГЛАВНЫЙ СОВЕТ:</div>
-        <div style="font-size:32px;font-weight:900;color:#ffffff;line-height:1.3;">Всегда проверяйте <strong style="color:var(--cyan)">чистоту ключей и крипто-подписи</strong>!</div>
+      <div id="verdict_card_3" class="card" data-ui="captured" style="border:2px solid var(--cyan-border);background:var(--cyan-bg-verdict);text-align:left;padding:32px 36px;">
+        <div style="font-size:22px;color:var(--cyan);font-weight:800;margin-bottom:8px;">03. ПРАВИЛО БЕЗОПАСНОСТИ:</div>
+        <div style="font-size:32px;font-weight:900;color:var(--ink);line-height:1.3;">Всегда проверяйте <strong style="color:var(--cyan)">чистоту ключей и крипто-подписи</strong>!</div>
       </div>
     </div>
   </section>
 
-  <!-- Jumpscare container with blood vignette & scanlines -->
+  <!-- Jumpscare container with crt scanlines -->
   <section id="scene6_jumpscare" class="jumpscare-overlay">
     <div class="crt-scanlines"></div>
-    <div class="horror-vignette"></div>
     <div id="jumpscare_content" data-ui="captured" style="display:flex;flex-direction:column;align-items:center;justify-content:center;transform-origin:center;">
-      <img src="public/images/secret_deepseek.png" style="width:960px;border-radius:24px;border:6px solid #ff0000;box-shadow:0 0 100px rgba(255,0,0,0.95);filter:contrast(160%) saturate(140%);" alt="Cursed jumpscare meme">
-      <div style="margin-top:40px;font-family:var(--font-mono);font-size:36px;font-weight:900;color:#ff0033;letter-spacing:normal;text-shadow:0 0 40px rgba(255,0,0,1);">
-        ⚠️ СЕКРЕТНЫЙ DEEPSEEK НАЙДЕН ⚠️
+      <img src="public/images/secret_deepseek.png" style="width:960px;border-radius:24px;border:6px solid var(--red);" alt="Cursed jumpscare meme">
+      <div style="margin-top:40px;font-family:var(--font-mono);font-size:36px;font-weight:900;color:var(--red);letter-spacing:normal;">
+        СЕКРЕТНЫЙ DEEPSEEK НАЙДЕН
       </div>
     </div>
   </section>
@@ -540,19 +553,17 @@ const RED = '#ef4444';
 /* ========================================================================= */
 // Initial setup
 M.show('#s1_p1', 0);
-M.hide(['#s1_p2', '#s1_p3', '#scene2', '#scene3', '#s4_p1', '#s4_p2', '#s4_p3', '#s4_p4', '#scene5', '#scene6_verdict', '#scene6_jumpscare', '#s3_model_sonnet', '#s3_response_sonnet'], 0);
+M.hide(['#s1_p2', '#s1_p3', '#scene2', '#scene3', '#s4_p1', '#s4_p2', '#s4_p3a', '#s4_p3b', '#s4_p4', '#scene5', '#scene6_verdict', '#scene6_jumpscare', '#s3_model_sonnet', '#s3_response_sonnet', '#s3_model_haiku', '#s3_response_haiku'], 0);
 
 // Phase 1: Real website hero camera push + 3 ruble promo badge
 M.drift('#s1_web_wrap', { prop: 'scale', from: 1.0, to: 1.06, start: 0, end: 155 });
-M.enter('#s1_promo_badge', { at: 40, frames: 12, ease: 'bounceHard', from: { scale: 2.2, y: 100 } });
+M.enter('#s1_promo_badge', { at: 40, frames: 12, ease: 'softLand', from: { scale: 1.4, y: 100 } });
 
-// Phase 2: Cut at frame 155 (5.1s) on "Мда..."
+// Phase 2: Cut at frame 155 (5.17s) on "Мда..."
 M.cut(155, { hide: ['#s1_p1'], show: ['#s1_p2'], label: 'cut to reality check' });
 M.enter('#mda_text', { at: 155, frames: 8, ease: 'crashIn', from: { scale: 3.2 } });
 M.words('#everyday_text', { at: 185, mech: 'rise', dist: 60, gaps: [4, 4, 4, 6], frames: 10, accent: { color: ACC, frames: 15 } });
 M.enter('#mammoth_stamp', { at: 260, frames: 10, ease: 'crashIn', from: { scale: 3.8, rotation: 12 } });
-// Impact camera shake on mammoth stamp
-M.kf('#s1_p2', 'y', [[260, 0], [261, -22], [263, 16], [265, -10], [268, 6], [272, 0]]);
 
 // Phase 3: Cut at frame 330 (11.0s) on "Сегодня мы вскроем..."
 M.cut(330, { hide: ['#s1_p2'], show: ['#s1_p3'], label: 'cut to target cheat-ai' });
@@ -585,92 +596,102 @@ M.kf('#thinking_block_bot', 'opacity', [[744, 1], [770, 0]]);
 // Void box appears
 M.enter('#void_box', { at: 765, frames: 10, ease: 'crashIn', from: { scale: 1.3 } });
 // Stamp slams
-M.enter('#s2_stamp', { at: 848, frames: 10, ease: 'bounceHard', from: { scale: 3.2, rotation: -6 } });
+M.enter('#s2_stamp', { at: 848, frames: 10, ease: 'crashIn', from: { scale: 3.2, rotation: -6 } });
 M.drift('#scene2', { prop: 'scale', from: 1.0, to: 1.03, start: 493, end: 963 });
 
 /* ========================================================================= */
-/* SCENE 3: MASQUERADE / INSTANT FLIP (963 - 1447 frames)                    */
+/* SCENE 3: MASQUERADE / OPUS -> SONNET -> HAIKU (963 - 1447 frames)         */
 /* ========================================================================= */
 M.cut(963, { hide: ['#scene2'], show: ['#scene3'], label: 'cut to masquerade' });
-M.words('#s3_headline', { at: 963, mech: 'rise', dist: 70, gaps: [4, 4, 6], frames: 11, accent: { color: ACC, frames: 15 } });
+M.words('#s3_headline', { at: 963, mech: 'rise', dist: 70, gaps: [4, 6], frames: 11, accent: { color: ACC, frames: 15 } });
 M.enter('#s3_terminal', { at: 1005, frames: 12, ease: 'softLand', from: { y: 60, scale: 0.92 } });
 
-// Oversized cursor whips in from bottom right towards model parameter
+// Cursor whips in to click model parameter
 M.cursor('#s3_cursor', {
   keys: [
-    [1140, 960, 1600, 2.8, -25],
-    [1158, 620, 1100, 1.6, -10],
-    [1175, 460, 930, 1.0, 0]
+    [1200, 960, 1600, 2.8, -25],
+    [1225, 620, 1150, 1.6, -10],
+    [1250, 420, 970, 1.0, 0],
+    [1270, 420, 970, 1.0, 0]
   ],
+  hideAt: 1310,
   ease: 'glide'
 });
-M.press('#s3_cursor', '#s3_model_opus', { at: 1185, frames: 3 });
 
-// At frame 1188: model flips from Opus to Sonnet, and response flips from Opus to Sonnet!
-M.cut(1188, {
+// Flip 1: At 41.87s (frame 1256) on "Запрашиваешь сонет..."
+M.press('#s3_cursor', '#s3_model_opus', { at: 1254, frames: 2 });
+M.cut(1256, {
   hide: ['#s3_model_opus', '#s3_response_opus'],
   show: ['#s3_model_sonnet', '#s3_response_sonnet'],
   label: 'flip model to sonnet'
 });
-M.enter('#s3_response_sonnet', { at: 1188, frames: 8, ease: 'popOver', from: { scale: 1.15 } });
+M.enter('#s3_response_sonnet', { at: 1256, frames: 8, ease: 'popOver', from: { scale: 1.15, opacity: 0 } });
 
-// Stamp at frame 1320
-M.enter('#s3_stamp', { at: 1320, frames: 10, ease: 'crashIn', from: { scale: 3.5, rotation: 5 } });
+// Flip 2: At 42.53s (frame 1276) on "...или хайку..."
+M.press('#s3_cursor', '#s3_model_sonnet', { at: 1274, frames: 2 });
+M.cut(1276, {
+  hide: ['#s3_model_sonnet', '#s3_response_sonnet'],
+  show: ['#s3_model_haiku', '#s3_response_haiku'],
+  label: 'flip model to haiku'
+});
+M.enter('#s3_response_haiku', { at: 1276, frames: 8, ease: 'popOver', from: { scale: 1.15, opacity: 0 } });
+
+// Stamp slams at frame 1350 on "...моментально переобувается!"
+M.enter('#s3_stamp', { at: 1350, frames: 10, ease: 'crashIn', from: { scale: 3.5, rotation: 5 } });
 M.drift('#scene3', { prop: 'scale', from: 1.0, to: 1.03, start: 963, end: 1447 });
 
 /* ========================================================================= */
-/* SCENE 4: ANALOGY & ZHIGULI MEME (1447 - 2802 frames)                      */
+/* SCENE 4: ANALOGY & ZHIGULI (1447 - 2802 frames)                           */
 /* ========================================================================= */
 // Part 4A: "А в чём наёб?"
 M.cut(1447, { hide: ['#scene3'], show: ['#s4_p1'], label: 'cut to ask why it matters' });
 M.words('#s4_ask_headline', { at: 1447, mech: 'rise', dist: 70, gaps: [4, 4, 4, 6], frames: 11, accent: { color: ACC, frames: 15 } });
-M.enter('#s4_arg_1', { at: 1520, frames: 10, ease: 'softLand', from: { y: 40 } });
-M.enter('#s4_arg_2', { at: 1600, frames: 10, ease: 'softLand', from: { y: 40 } });
-M.enter('#s4_arg_3', { at: 1680, frames: 10, ease: 'popOver', from: { scale: 0.85 } });
+M.enter('#s4_arg_1', { at: 1538, frames: 10, ease: 'softLand', from: { y: 40 } });
+M.enter('#s4_arg_2', { at: 1635, frames: 10, ease: 'softLand', from: { y: 40 } });
+M.enter('#s4_arg_3', { at: 1708, frames: 10, ease: 'popOver', from: { scale: 0.85 } });
 
-// Part 4B: Timecode 00:59 (frame 1767) "А у cheat-ai? У них нет опуса!"
-M.cut(1767, { hide: ['#s4_p1'], show: ['#s4_p2'], label: 'cut to no opus reveal' });
-M.enter('#s4_cheat_card', { at: 1767, frames: 10, ease: 'popOver', from: { scale: 0.8 } });
-M.enter('#no_opus_badge', { at: 1797, frames: 10, ease: 'crashIn', from: { scale: 3.2, rotation: -3 } });
+// Part 4B: Timecode 00:59 (frame 1778) "А у cheat-ai? У них нет настоящего опуса!"
+M.cut(1778, { hide: ['#s4_p1'], show: ['#s4_p2'], label: 'cut to no opus reveal' });
+M.enter('#s4_cheat_card', { at: 1778, frames: 10, ease: 'popOver', from: { scale: 0.8 } });
+M.enter('#no_opus_badge', { at: 1805, frames: 10, ease: 'crashIn', from: { scale: 3.2, rotation: -3 } });
 
 // Sequential models strictly one-by-one under speech
-M.enter('#model_card_1', { at: 1909, frames: 10, ease: 'softLand', from: { y: 50, scale: 0.88 } });
-M.enter('#model_card_2', { at: 1957, frames: 10, ease: 'softLand', from: { y: 50, scale: 0.88 } });
-M.enter('#model_card_3', { at: 2005, frames: 10, ease: 'softLand', from: { y: 50, scale: 0.88 } });
+M.enter('#model_card_1', { at: 1974, frames: 10, ease: 'softLand', from: { y: 50, scale: 0.88 } });
+M.enter('#model_card_2', { at: 2008, frames: 10, ease: 'softLand', from: { y: 50, scale: 0.88 } });
+M.enter('#model_card_3', { at: 2030, frames: 10, ease: 'softLand', from: { y: 50, scale: 0.88 } });
 
-M.enter('#cheap_net_stamp', { at: 2074, frames: 12, ease: 'crashIn', from: { scale: 3.6, rotation: 4 } });
+M.enter('#cheap_net_stamp', { at: 2085, frames: 12, ease: 'crashIn', from: { scale: 3.6, rotation: 4 } });
 
-// Part 4C-1: Timecode 1:12 (frame 2162) System Prompt Injection reveal
-M.cut(2162, { hide: ['#s4_p2'], show: ['#s4_p3a'], label: 'cut to system prompt masquerade' });
-M.words('#s4_p3a_title', { at: 2162, mech: 'rise', dist: 70, gaps: [4, 6], frames: 10, accent: { color: RED, frames: 15 } });
-M.enter('#s4_sys_prompt_card', { at: 2185, frames: 12, ease: 'softLand', from: { y: 50, scale: 0.92 } });
-M.enter('#s4_dialogue_card', { at: 2235, frames: 12, ease: 'softLand', from: { y: 40 } });
-M.enter('#s4_dumber_stamp', { at: 2285, frames: 12, ease: 'crashIn', from: { scale: 3.2, rotation: -4 } });
-M.drift('#s4_p3a', { prop: 'scale', from: 1.0, to: 1.03, start: 2162, end: 2375 });
+// Part 4C-1: Timecode 1:12.5 (frame 2175) System Prompt Injection reveal
+M.cut(2175, { hide: ['#s4_p2'], show: ['#s4_p3a'], label: 'cut to system prompt masquerade' });
+M.words('#s4_p3a_title', { at: 2175, mech: 'rise', dist: 70, gaps: [4, 6], frames: 10, accent: { color: RED, frames: 15 } });
+M.enter('#s4_sys_prompt_card', { at: 2195, frames: 12, ease: 'softLand', from: { y: 50, scale: 0.92 } });
+M.enter('#s4_dumber_stamp', { at: 2318, frames: 12, ease: 'crashIn', from: { scale: 3.2, rotation: -4 } });
+M.drift('#s4_p3a', { prop: 'scale', from: 1.0, to: 1.03, start: 2175, end: 2385 });
 
-// Part 4C-2: Timecode 1:19 (frame 2375) Sequential failure cascade
-M.cut(2375, { hide: ['#s4_p3a'], show: ['#s4_p3b'], label: 'cut to cost of deception' });
-M.words('#s4_p3b_title', { at: 2375, mech: 'rise', dist: 70, gaps: [4, 6], frames: 10, accent: { color: RED, frames: 15 } });
-M.enter('#fail_item_1', { at: 2380, frames: 12, ease: 'softLand', from: { x: -70 } });
-M.enter('#fail_item_2', { at: 2450, frames: 12, ease: 'softLand', from: { x: 70 } });
-M.enter('#fail_item_3', { at: 2520, frames: 12, ease: 'crashIn', from: { scale: 2.2 } });
-M.drift('#s4_p3b', { prop: 'scale', from: 1.0, to: 1.03, start: 2375, end: 2610 });
+// Part 4C-2: Timecode 1:19.5 (frame 2385) Sequential failure cascade
+M.cut(2385, { hide: ['#s4_p3a'], show: ['#s4_p3b'], label: 'cut to cost of deception' });
+M.words('#s4_p3b_title', { at: 2385, mech: 'rise', dist: 70, gaps: [4, 6], frames: 10, accent: { color: RED, frames: 15 } });
+M.enter('#fail_item_1', { at: 2397, frames: 12, ease: 'softLand', from: { x: -70 } });
+M.enter('#fail_item_2', { at: 2470, frames: 12, ease: 'softLand', from: { x: 70 } });
+M.enter('#fail_item_3', { at: 2532, frames: 12, ease: 'crashIn', from: { scale: 2.2 } });
+M.drift('#s4_p3b', { prop: 'scale', from: 1.0, to: 1.03, start: 2385, end: 2635 });
 
-// Part 4D: Zhiguli Meme (frames 2610 - 2802)
-M.cut(2610, { hide: ['#s4_p3b'], show: ['#s4_p4'], label: 'cut to zhiguli meme' });
-M.words('#zhiguli_title', { at: 2610, mech: 'rise', dist: 70, gaps: [4, 4, 4, 6], frames: 10, accent: { color: ACC, frames: 15 } });
-M.enter('#zhiguli_wrap', { at: 2625, frames: 14, ease: 'softLand', from: { scale: 0.82, y: 70 } });
+// Part 4D: Zhiguli Meme (frames 2635 - 2802)
+M.cut(2635, { hide: ['#s4_p3b'], show: ['#s4_p4'], label: 'cut to zhiguli meme' });
+M.words('#zhiguli_title', { at: 2635, mech: 'rise', dist: 70, gaps: [4, 4, 4, 6], frames: 10, accent: { color: ACC, frames: 15 } });
+M.enter('#zhiguli_wrap', { at: 2645, frames: 14, ease: 'softLand', from: { scale: 0.82, y: 70 } });
 
-// Ferrari badge drops & bounces on hood at frame 2682
-M.enter('#ferrari_badge', { at: 2682, frames: 16, ease: 'bounceHard', from: { y: -350, scale: 2.5 } });
+// Ferrari badge drops & settles on hood at frame 2665
+M.enter('#ferrari_badge', { at: 2665, frames: 14, ease: 'softLand', from: { y: -300, scale: 2.2 } });
 
 // Two frosted duct tape strips slap on diagonally (NO text)
-M.enter('#tape_strip_1', { at: 2707, frames: 6, ease: 'crashIn', from: { scale: 2.4, opacity: 0 } });
-M.enter('#tape_strip_2', { at: 2717, frames: 6, ease: 'crashIn', from: { scale: 2.4, opacity: 0 } });
+M.enter('#tape_strip_1', { at: 2685, frames: 6, ease: 'crashIn', from: { scale: 2.4, opacity: 0 } });
+M.enter('#tape_strip_2', { at: 2695, frames: 6, ease: 'crashIn', from: { scale: 2.4, opacity: 0 } });
 
-// Stamp at frame 2742
-M.enter('#zhiguli_stamp', { at: 2742, frames: 10, ease: 'crashIn', from: { scale: 3.5, rotation: -5 } });
-M.drift('#s4_p4', { prop: 'scale', from: 1.0, to: 1.03, start: 2610, end: 2802 });
+// Stamp at frame 2746
+M.enter('#zhiguli_stamp', { at: 2746, frames: 10, ease: 'crashIn', from: { scale: 3.5, rotation: -5 } });
+M.drift('#s4_p4', { prop: 'scale', from: 1.0, to: 1.03, start: 2635, end: 2802 });
 
 /* ========================================================================= */
 /* SCENE 5: LEAKED HEADER & 404 (2802 - 3204 frames)                         */
@@ -698,12 +719,12 @@ M.enter('#verdict_card_3', { at: 3474, frames: 12, ease: 'softLand', from: { y: 
 M.cut(3553, { hide: ['#scene6_verdict'], show: ['#scene6_jumpscare'], label: 'jumpscare screamer' });
 M.enter('#jumpscare_content', { at: 3553, frames: 5, ease: 'crashIn', from: { scale: 0.7 } });
 
-// Multi-frequency violent camera shake on jumpscare
+// Multi-frequency camera shake on jumpscare
 const shakeKeysX = [];
 const shakeKeysY = [];
 for (let f = 3553; f <= 3609; f++) {
   const i = f - 3553;
-  const mag = i < 25 ? 32 : 14;
+  const mag = i < 25 ? 30 : 12;
   shakeKeysX.push([f, Math.sin(i * 1.8) * mag]);
   shakeKeysY.push([f, Math.cos(i * 2.3) * mag]);
 }

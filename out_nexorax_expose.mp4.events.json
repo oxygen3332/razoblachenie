@@ -9,7 +9,7 @@
   "t": 0,
   "frame": 0,
   "type": "hide",
-  "label": "#s1_p2,#s1_p3,#scene2,#scene3,#s4_p1,#s4_p2,#s4_p4,#scene5,#scene6_verdict,#scene6_jumpscare,#s3_model_sonnet,#s3_response_sonnet"
+  "label": "#s1_p2,#s1_p3,#scene2,#scene3,#s4_p1,#s4_p2,#s4_p3a,#s4_p3b,#s4_p4,#scene5,#scene6_verdict,#scene6_jumpscare,#s3_model_sonnet,#s3_response_sonnet,#s3_model_haiku,#s3_response_haiku"
  },
  {
   "t": 1.3333,
@@ -81,13 +81,13 @@
   "t": 6.7667,
   "frame": 203,
   "type": "enter",
-  "label": "день..."
+  "label": "день…"
  },
  {
   "t": 6.7667,
   "frame": 203,
   "type": "word",
-  "label": "день..."
+  "label": "день…"
  },
  {
   "t": 8.6667,
@@ -225,49 +225,25 @@
   "t": 32.1,
   "frame": 963,
   "type": "enter",
-  "label": "ПЕРЕОБУВАНИЕ"
+  "label": "ПРИМИТИВНЫЙ"
  },
  {
   "t": 32.1,
   "frame": 963,
   "type": "word",
-  "label": "ПЕРЕОБУВАНИЕ"
+  "label": "ПРИМИТИВНЫЙ"
  },
  {
   "t": 32.2333,
   "frame": 967,
   "type": "enter",
-  "label": "ЗА"
+  "label": "МАСКАРАД"
  },
  {
   "t": 32.2333,
   "frame": 967,
   "type": "word",
-  "label": "ЗА"
- },
- {
-  "t": 32.3667,
-  "frame": 971,
-  "type": "enter",
-  "label": "1"
- },
- {
-  "t": 32.3667,
-  "frame": 971,
-  "type": "word",
-  "label": "1"
- },
- {
-  "t": 32.5667,
-  "frame": 977,
-  "type": "enter",
-  "label": "КЛИК"
- },
- {
-  "t": 32.5667,
-  "frame": 977,
-  "type": "word",
-  "label": "КЛИК"
+  "label": "МАСКАРАД"
  },
  {
   "t": 33.5,
@@ -276,26 +252,44 @@
   "label": "#s3_terminal"
  },
  {
-  "t": 39.5,
-  "frame": 1185,
+  "t": 41.8,
+  "frame": 1254,
   "type": "press",
   "label": "#s3_model_opus"
  },
  {
-  "t": 39.6,
-  "frame": 1188,
+  "t": 41.8667,
+  "frame": 1256,
   "type": "cut",
   "label": "flip model to sonnet"
  },
  {
-  "t": 39.6,
-  "frame": 1188,
+  "t": 41.8667,
+  "frame": 1256,
   "type": "enter",
   "label": "#s3_response_sonnet"
  },
  {
-  "t": 44,
-  "frame": 1320,
+  "t": 42.4667,
+  "frame": 1274,
+  "type": "press",
+  "label": "#s3_model_sonnet"
+ },
+ {
+  "t": 42.5333,
+  "frame": 1276,
+  "type": "cut",
+  "label": "flip model to haiku"
+ },
+ {
+  "t": 42.5333,
+  "frame": 1276,
+  "type": "enter",
+  "label": "#s3_response_haiku"
+ },
+ {
+  "t": 45,
+  "frame": 1350,
   "type": "enter",
   "label": "#s3_stamp"
  },
@@ -354,242 +348,272 @@
   "label": "НАЁБ?"
  },
  {
-  "t": 50.6667,
-  "frame": 1520,
+  "t": 51.2667,
+  "frame": 1538,
   "type": "enter",
   "label": "#s4_arg_1"
  },
  {
-  "t": 53.3333,
-  "frame": 1600,
+  "t": 54.5,
+  "frame": 1635,
   "type": "enter",
   "label": "#s4_arg_2"
  },
  {
-  "t": 56,
-  "frame": 1680,
+  "t": 56.9333,
+  "frame": 1708,
   "type": "enter",
   "label": "#s4_arg_3"
  },
  {
-  "t": 58.9,
-  "frame": 1767,
+  "t": 59.2667,
+  "frame": 1778,
   "type": "cut",
   "label": "cut to no opus reveal"
  },
  {
-  "t": 58.9,
-  "frame": 1767,
+  "t": 59.2667,
+  "frame": 1778,
   "type": "enter",
   "label": "#s4_cheat_card"
  },
  {
-  "t": 59.9,
-  "frame": 1797,
+  "t": 60.1667,
+  "frame": 1805,
   "type": "enter",
   "label": "#no_opus_badge"
  },
  {
-  "t": 63.6333,
-  "frame": 1909,
+  "t": 65.8,
+  "frame": 1974,
   "type": "enter",
   "label": "#model_card_1"
  },
  {
-  "t": 65.2333,
-  "frame": 1957,
+  "t": 66.9333,
+  "frame": 2008,
   "type": "enter",
   "label": "#model_card_2"
  },
  {
-  "t": 66.8333,
-  "frame": 2005,
+  "t": 67.6667,
+  "frame": 2030,
   "type": "enter",
   "label": "#model_card_3"
  },
  {
-  "t": 69.1333,
-  "frame": 2074,
+  "t": 69.5,
+  "frame": 2085,
   "type": "enter",
   "label": "#cheap_net_stamp"
  },
  {
-  "t": 72.0667,
-  "frame": 2162,
+  "t": 72.5,
+  "frame": 2175,
   "type": "cut",
   "label": "cut to system prompt masquerade"
  },
  {
-  "t": 72.0667,
-  "frame": 2162,
+  "t": 72.5,
+  "frame": 2175,
   "type": "enter",
-  "label": "СИСТЕМНЫЙ"
+  "label": "ПОДМЕНА"
  },
  {
-  "t": 72.0667,
-  "frame": 2162,
+  "t": 72.5,
+  "frame": 2175,
   "type": "word",
-  "label": "СИСТЕМНЫЙ"
+  "label": "ПОДМЕНА"
  },
  {
-  "t": 72.2,
-  "frame": 2166,
+  "t": 72.6333,
+  "frame": 2179,
   "type": "enter",
-  "label": "ПРОМПТ"
+  "label": "В"
  },
  {
-  "t": 72.2,
-  "frame": 2166,
+  "t": 72.6333,
+  "frame": 2179,
   "type": "word",
-  "label": "ПРОМПТ"
+  "label": "В"
  },
  {
   "t": 72.8333,
   "frame": 2185,
   "type": "enter",
+  "label": "ПРОМПТЕ"
+ },
+ {
+  "t": 72.8333,
+  "frame": 2185,
+  "type": "word",
+  "label": "ПРОМПТЕ"
+ },
+ {
+  "t": 73.1667,
+  "frame": 2195,
+  "type": "enter",
   "label": "#s4_sys_prompt_card"
  },
  {
-  "t": 74.5,
-  "frame": 2235,
-  "type": "enter",
-  "label": "#s4_dialogue_card"
- },
- {
-  "t": 76.1667,
-  "frame": 2285,
+  "t": 77.2667,
+  "frame": 2318,
   "type": "enter",
   "label": "#s4_dumber_stamp"
  },
  {
-  "t": 79.1667,
-  "frame": 2375,
+  "t": 79.5,
+  "frame": 2385,
   "type": "cut",
   "label": "cut to cost of deception"
  },
  {
-  "t": 79.1667,
-  "frame": 2375,
+  "t": 79.5,
+  "frame": 2385,
   "type": "enter",
   "label": "ЦЕНА"
  },
  {
-  "t": 79.1667,
-  "frame": 2375,
+  "t": 79.5,
+  "frame": 2385,
   "type": "word",
   "label": "ЦЕНА"
  },
  {
-  "t": 79.3,
-  "frame": 2379,
+  "t": 79.6333,
+  "frame": 2389,
   "type": "enter",
   "label": "ОБМАНА"
  },
  {
-  "t": 79.3,
-  "frame": 2379,
+  "t": 79.6333,
+  "frame": 2389,
   "type": "word",
   "label": "ОБМАНА"
  },
  {
-  "t": 79.3333,
-  "frame": 2380,
+  "t": 79.9,
+  "frame": 2397,
   "type": "enter",
   "label": "#fail_item_1"
  },
  {
-  "t": 81.6667,
-  "frame": 2450,
+  "t": 82.3333,
+  "frame": 2470,
   "type": "enter",
   "label": "#fail_item_2"
  },
  {
-  "t": 84,
-  "frame": 2520,
+  "t": 84.4,
+  "frame": 2532,
   "type": "enter",
   "label": "#fail_item_3"
  },
  {
-  "t": 87,
-  "frame": 2610,
+  "t": 87.8333,
+  "frame": 2635,
   "type": "cut",
   "label": "cut to zhiguli meme"
  },
  {
-  "t": 87,
-  "frame": 2610,
-  "type": "enter",
-  "label": "ЭТО"
- },
- {
-  "t": 87,
-  "frame": 2610,
-  "type": "word",
-  "label": "ЭТО"
- },
- {
-  "t": 87.1333,
-  "frame": 2614,
+  "t": 87.8333,
+  "frame": 2635,
   "type": "enter",
   "label": "КАК"
  },
  {
-  "t": 87.1333,
-  "frame": 2614,
+  "t": 87.8333,
+  "frame": 2635,
   "type": "word",
   "label": "КАК"
  },
  {
-  "t": 87.2667,
-  "frame": 2618,
+  "t": 87.9667,
+  "frame": 2639,
   "type": "enter",
-  "label": "КУПИТЬ"
+  "label": "ПРОДАТЬ"
  },
  {
-  "t": 87.2667,
-  "frame": 2618,
+  "t": 87.9667,
+  "frame": 2639,
   "type": "word",
-  "label": "КУПИТЬ"
+  "label": "ПРОДАТЬ"
  },
  {
-  "t": 87.4,
-  "frame": 2622,
+  "t": 88.1,
+  "frame": 2643,
   "type": "enter",
-  "label": "ЖИГУЛИ..."
+  "label": "ЖИГУЛИ"
  },
  {
-  "t": 87.4,
-  "frame": 2622,
+  "t": 88.1,
+  "frame": 2643,
   "type": "word",
-  "label": "ЖИГУЛИ..."
+  "label": "ЖИГУЛИ"
  },
  {
-  "t": 87.5,
-  "frame": 2625,
+  "t": 88.1667,
+  "frame": 2645,
   "type": "enter",
   "label": "#zhiguli_wrap"
  },
  {
-  "t": 89.4,
-  "frame": 2682,
+  "t": 88.2333,
+  "frame": 2647,
+  "type": "enter",
+  "label": "С"
+ },
+ {
+  "t": 88.2333,
+  "frame": 2647,
+  "type": "word",
+  "label": "С"
+ },
+ {
+  "t": 88.4333,
+  "frame": 2653,
+  "type": "enter",
+  "label": "ШИЛЬДИКОМ"
+ },
+ {
+  "t": 88.4333,
+  "frame": 2653,
+  "type": "word",
+  "label": "ШИЛЬДИКОМ"
+ },
+ {
+  "t": 88.6333,
+  "frame": 2659,
+  "type": "enter",
+  "label": "FERRARI"
+ },
+ {
+  "t": 88.6333,
+  "frame": 2659,
+  "type": "word",
+  "label": "FERRARI"
+ },
+ {
+  "t": 88.8333,
+  "frame": 2665,
   "type": "enter",
   "label": "#ferrari_badge"
  },
  {
-  "t": 90.2333,
-  "frame": 2707,
+  "t": 89.5,
+  "frame": 2685,
   "type": "enter",
   "label": "#tape_strip_1"
  },
  {
-  "t": 90.5667,
-  "frame": 2717,
+  "t": 89.8333,
+  "frame": 2695,
   "type": "enter",
   "label": "#tape_strip_2"
  },
  {
-  "t": 91.4,
-  "frame": 2742,
+  "t": 91.5333,
+  "frame": 2746,
   "type": "enter",
   "label": "#zhiguli_stamp"
  },
