@@ -3,9 +3,11 @@
 11.000	frame 330	0:11.00	event cut 'cut to target cheat-ai'
 16.433	frame 493	0:16.43	event cut 'cut to thinking stripped'
 32.100	frame 963	0:32.10	event cut 'cut to masquerade'
+39.600	frame 1188	0:39.60	event cut 'flip model to sonnet'
 48.233	frame 1447	0:48.23	event cut 'cut to ask why it matters'
 58.900	frame 1767	0:58.90	event cut 'cut to no opus reveal'
-72.067	frame 2162	1:12.07	event cut 'cut to cost of deception'
+72.067	frame 2162	1:12.07	event cut 'cut to system prompt masquerade'
+79.167	frame 2375	1:19.17	event cut 'cut to cost of deception'
 87.000	frame 2610	1:27.00	event cut 'cut to zhiguli meme'
 93.400	frame 2802	1:33.40	event cut 'cut to leaked headers'
 106.800	frame 3204	1:46.80	event cut 'cut to final verdict'
@@ -13,7 +15,8 @@
 # detected but not in events:
 1.333	frame 40	0:01.33	scene 0.15 + corr 0.50 spike x2.0
 8.667	frame 260	0:08.67	scene 0.16 + corr 0.59 spike x3.7
-44.000	frame 1320	0:44.00	scene 0.14 + corr 0.58 spike x6.3
+44.000	frame 1320	0:44.00	scene 0.13 + corr 0.57 spike x6.3
 59.900	frame 1797	0:59.90	pixel spike x5.9 diff 10.4 corr 0.51 scene 0.09
 69.133	frame 2074	1:09.13	scene 0.13 + corr 0.38 spike x5.1
+76.167	frame 2285	1:16.17	scene 0.19 + corr 0.39 spike x5.2
 87.500	frame 2625	1:27.50	scene 0.16 + corr 0.31 spike x4.5

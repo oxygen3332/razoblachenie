@@ -393,8 +393,43 @@ html, body {
     </div>
   </section>
 
-  <section id="s4_p3" class="scene">
-    <div id="s4_p3_title" class="hero-title" style="margin-bottom:40px;">ЦЕНА ОБМАНА</div>
+  <!-- =================================================================== -->
+  <!-- SCENE 4: PART 3A - SYSTEM PROMPT INJECTION (2162 - 2375 frames)     -->
+  <!-- =================================================================== -->
+  <section id="s4_p3a" class="scene">
+    <div id="s4_p3a_title" class="hero-title" style="margin-bottom:34px;">СИСТЕМНЫЙ ПРОМПТ</div>
+    
+    <!-- Injection Terminal Card -->
+    <div id="s4_sys_prompt_card" class="card" data-ui="captured" style="width:100%;max-width:960px;padding:32px 36px;text-align:left;border:2px solid rgba(56,189,248,0.6);background:rgba(12,18,28,0.92);box-shadow:0 0 60px rgba(56,189,248,0.28);margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+        <span style="display:inline-block;padding:8px 20px;border-radius:12px;background:rgba(56,189,248,0.18);border:1.5px solid rgba(56,189,248,0.6);font-family:var(--font-mono);font-size:24px;color:var(--cyan);font-weight:800;">
+          ⚙️ INJECTED_SYSTEM_PROMPT
+        </span>
+      </div>
+      <div style="font-family:var(--font-mono);font-size:32px;color:#ffffff;line-height:1.55;background:rgba(0,0,0,0.7);padding:26px 30px;border-radius:20px;border:1px solid rgba(255,255,255,0.14);">
+        <span style="color:var(--cyan);font-weight:800;">system:</span> <span style="color:#fde047;font-weight:700;">"Ты — claude-opus-5.5."</span><br>
+        <span style="color:var(--ink-muted);font-size:24px;font-style:italic;">// заставляют дешёвую сетку притворяться опусом</span>
+      </div>
+    </div>
+
+    <!-- Dialogue Quote Card -->
+    <div id="s4_dialogue_card" class="card" data-ui="captured" style="width:100%;max-width:960px;padding:26px 34px;text-align:left;border:2px solid rgba(255,255,255,0.16);background:rgba(18,18,18,0.85);margin-bottom:28px;">
+      <div style="font-size:32px;font-weight:700;color:var(--ink-soft);line-height:1.35;">
+        💬 «В простых диалогах вы <span style="color:#ffffff;font-weight:900;border-bottom:3px solid var(--accent);">не заметите подвоха</span>...»
+      </div>
+    </div>
+
+    <!-- Slamming Warning Stamp -->
+    <div id="s4_dumber_stamp" class="stamp" style="transform:rotate(-3deg);font-size:48px;max-width:960px;line-height:1.25;color:#ffffff;border-color:#ff334b;background:rgba(255,51,75,0.22);box-shadow:0 0 60px rgba(255,51,75,0.65), inset 0 0 30px rgba(255,51,75,0.3);text-shadow:0 0 40px rgba(255,51,75,0.9);">
+      МОДЕЛЬ ОТ ЭТОГО НЕ СТАНЕТ УМНЕЕ!
+    </div>
+  </section>
+
+  <!-- =================================================================== -->
+  <!-- SCENE 4: PART 3B - 10-FILE FAILURE CASCADE (2375 - 2610 frames)     -->
+  <!-- =================================================================== -->
+  <section id="s4_p3b" class="scene">
+    <div id="s4_p3b_title" class="hero-title" style="margin-bottom:40px;">ЦЕНА ОБМАНА</div>
     <div style="display:flex;flex-direction:column;gap:26px;width:100%;max-width:960px;">
       <div id="fail_item_1" class="card" data-ui="captured" style="border:2px solid rgba(239,68,68,0.4);text-align:left;padding:32px 36px;">
         <div style="font-size:24px;color:var(--red);font-weight:800;margin-bottom:8px;">📁 НА ПРОЕКТЕ ИЗ 10 ФАЙЛОВ:</div>
@@ -605,15 +640,24 @@ M.enter('#model_card_3', { at: 2005, frames: 10, ease: 'softLand', from: { y: 50
 
 M.enter('#cheap_net_stamp', { at: 2074, frames: 12, ease: 'crashIn', from: { scale: 3.6, rotation: 4 } });
 
-// Part 4C: Timecode 1:12 (frame 2162) Sequential failure items
-M.cut(2162, { hide: ['#s4_p2'], show: ['#s4_p3'], label: 'cut to cost of deception' });
-M.words('#s4_p3_title', { at: 2162, mech: 'rise', dist: 70, gaps: [4, 6], frames: 10, accent: { color: RED, frames: 15 } });
+// Part 4C-1: Timecode 1:12 (frame 2162) System Prompt Injection reveal
+M.cut(2162, { hide: ['#s4_p2'], show: ['#s4_p3a'], label: 'cut to system prompt masquerade' });
+M.words('#s4_p3a_title', { at: 2162, mech: 'rise', dist: 70, gaps: [4, 6], frames: 10, accent: { color: RED, frames: 15 } });
+M.enter('#s4_sys_prompt_card', { at: 2185, frames: 12, ease: 'softLand', from: { y: 50, scale: 0.92 } });
+M.enter('#s4_dialogue_card', { at: 2235, frames: 12, ease: 'softLand', from: { y: 40 } });
+M.enter('#s4_dumber_stamp', { at: 2285, frames: 12, ease: 'crashIn', from: { scale: 3.2, rotation: -4 } });
+M.drift('#s4_p3a', { prop: 'scale', from: 1.0, to: 1.03, start: 2162, end: 2375 });
+
+// Part 4C-2: Timecode 1:19 (frame 2375) Sequential failure cascade
+M.cut(2375, { hide: ['#s4_p3a'], show: ['#s4_p3b'], label: 'cut to cost of deception' });
+M.words('#s4_p3b_title', { at: 2375, mech: 'rise', dist: 70, gaps: [4, 6], frames: 10, accent: { color: RED, frames: 15 } });
 M.enter('#fail_item_1', { at: 2380, frames: 12, ease: 'softLand', from: { x: -70 } });
 M.enter('#fail_item_2', { at: 2450, frames: 12, ease: 'softLand', from: { x: 70 } });
 M.enter('#fail_item_3', { at: 2520, frames: 12, ease: 'crashIn', from: { scale: 2.2 } });
+M.drift('#s4_p3b', { prop: 'scale', from: 1.0, to: 1.03, start: 2375, end: 2610 });
 
 // Part 4D: Zhiguli Meme (frames 2610 - 2802)
-M.cut(2610, { hide: ['#s4_p3'], show: ['#s4_p4'], label: 'cut to zhiguli meme' });
+M.cut(2610, { hide: ['#s4_p3b'], show: ['#s4_p4'], label: 'cut to zhiguli meme' });
 M.words('#zhiguli_title', { at: 2610, mech: 'rise', dist: 70, gaps: [4, 4, 4, 6], frames: 10, accent: { color: ACC, frames: 15 } });
 M.enter('#zhiguli_wrap', { at: 2625, frames: 14, ease: 'softLand', from: { scale: 0.82, y: 70 } });
 

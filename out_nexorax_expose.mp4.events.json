@@ -9,7 +9,7 @@
   "t": 0,
   "frame": 0,
   "type": "hide",
-  "label": "#s1_p2,#s1_p3,#scene2,#scene3,#s4_p1,#s4_p2,#s4_p3,#s4_p4,#scene5,#scene6_verdict,#scene6_jumpscare,#s3_model_sonnet,#s3_response_sonnet"
+  "label": "#s1_p2,#s1_p3,#scene2,#scene3,#s4_p1,#s4_p2,#s4_p4,#scene5,#scene6_verdict,#scene6_jumpscare,#s3_model_sonnet,#s3_response_sonnet"
  },
  {
   "t": 1.3333,
@@ -417,29 +417,77 @@
   "t": 72.0667,
   "frame": 2162,
   "type": "cut",
-  "label": "cut to cost of deception"
+  "label": "cut to system prompt masquerade"
  },
  {
   "t": 72.0667,
   "frame": 2162,
   "type": "enter",
-  "label": "ЦЕНА"
+  "label": "СИСТЕМНЫЙ"
  },
  {
   "t": 72.0667,
   "frame": 2162,
   "type": "word",
-  "label": "ЦЕНА"
+  "label": "СИСТЕМНЫЙ"
  },
  {
   "t": 72.2,
   "frame": 2166,
   "type": "enter",
-  "label": "ОБМАНА"
+  "label": "ПРОМПТ"
  },
  {
   "t": 72.2,
   "frame": 2166,
+  "type": "word",
+  "label": "ПРОМПТ"
+ },
+ {
+  "t": 72.8333,
+  "frame": 2185,
+  "type": "enter",
+  "label": "#s4_sys_prompt_card"
+ },
+ {
+  "t": 74.5,
+  "frame": 2235,
+  "type": "enter",
+  "label": "#s4_dialogue_card"
+ },
+ {
+  "t": 76.1667,
+  "frame": 2285,
+  "type": "enter",
+  "label": "#s4_dumber_stamp"
+ },
+ {
+  "t": 79.1667,
+  "frame": 2375,
+  "type": "cut",
+  "label": "cut to cost of deception"
+ },
+ {
+  "t": 79.1667,
+  "frame": 2375,
+  "type": "enter",
+  "label": "ЦЕНА"
+ },
+ {
+  "t": 79.1667,
+  "frame": 2375,
+  "type": "word",
+  "label": "ЦЕНА"
+ },
+ {
+  "t": 79.3,
+  "frame": 2379,
+  "type": "enter",
+  "label": "ОБМАНА"
+ },
+ {
+  "t": 79.3,
+  "frame": 2379,
   "type": "word",
   "label": "ОБМАНА"
  },
